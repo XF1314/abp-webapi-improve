@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Sinks.ElasticSearch" Version="6.5.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="2.5.0" />
+
+
+    <PackageReference Include="Volo.Abp.Autofac" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.Identity.MongoDB" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.IdentityServer.MongoDb" Version="2.5.0" />
+    <!--<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="2.5.0" />-->
+    <PackageReference Include="Volo.Abp.Account.Application" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.MongoDb" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.MongoDB" Version="2.5.0" />
+
+    <PackageReference Include="Volo.Abp.PermissionManagement.MongoDb" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.MongoDb" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.MongoDb" Version="2.5.0" />
+
+    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.MongoDb" Version="2.5.0" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+    <ProjectReference Include="..\..\..\Framework\Volo.Abp.Account.Web.IdentityServer\Volo.Abp.Account.Web.IdentityServer.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
