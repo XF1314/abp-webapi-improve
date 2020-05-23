@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Identity.Web</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Identity.Web</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\**\*.cshtml" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\**\*.cshtml" />
+    <Content Remove="Pages\**\*.js" />
+    <Content Remove="Pages\**\*.css" />
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="compilerconfig.json.defaults" />
+    <Content Remove="Properties\launchSettings.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PermissionManagement\Com.OPPO.Mo.PermissionManagement.Web\Com.OPPO.Mo.PermissionManagement.Web.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Identity.HttpApi\Com.OPPO.Mo.Identity.HttpApi.csproj" />
+    
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Bootstrap" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

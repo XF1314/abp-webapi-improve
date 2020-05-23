@@ -15,21 +15,21 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Security.Claims;
-using Volo.Blogging;
-using Volo.Abp.PermissionManagement.MongoDB;
-using Volo.Abp.SettingManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
 using System;
 using Microsoft.IdentityModel.Logging;
 using Volo.Abp.MongoDB;
 using Volo.Abp.Data;
+using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Com.OPPO.Mo.Blogging;
 
 namespace Com.OPPO.Mo.PublicGateway
 {
     [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(BloggingHttpApiModule),
-    typeof(AbpPermissionManagementMongoDbModule),
-    typeof(AbpSettingManagementMongoDbModule),
+    typeof(MoBloggingHttpApiModule),
+    typeof(MoPermissionManagementMongoDbModule),
+    typeof(MoSettingManagementMongoDbModule),
     typeof(AbpAspNetCoreMultiTenancyModule))]
     public class MoPublicWebSiteGatewayHostModule : AbpModule
     {

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Blogging.Application.Contracts</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Blogging.Application.Contracts</PackageId>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\cs.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\en.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\pl.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\pt-BR.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\sl.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\tr.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\vi.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\zh-Hans.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\Blogging\Localization\Resources\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.Blogging.Domain.Shared\Com.OPPO.Mo.Blogging.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="2.5.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Identity.Domain.Shared</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Identity.Domain.Shared</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Com\OPPO\Mo\Identity\Localization\Resources\*.json" />
+    <Content Remove="Com\OPPO\Mo\Identity\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Users\Com.OPPO.Mo.Users.Domain.Shared\Com.OPPO.Mo.Users.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Validation" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

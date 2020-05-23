@@ -1,8 +1,12 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.Elasticsearch;
@@ -24,7 +28,7 @@ namespace Com.OPPO.Mo.BackendAdmin
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                 .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
-                .Enrich.WithProperty("Application", "Com.OPPO.Mo.BackendAdmin")
+                .Enrich.WithProperty("Application", "BackendAdminApp")
                 .Enrich.FromLogContext()
                 .WriteTo.File("Logs/logs.txt")
                 .WriteTo.Elasticsearch(
@@ -32,19 +36,19 @@ namespace Com.OPPO.Mo.BackendAdmin
                     {
                         AutoRegisterTemplate = true,
                         AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-                        IndexFormat = "xpress-backendAdmin-log-{0:yyyy.MM}"
+                        IndexFormat = "msdemo-log-{0:yyyy.MM}"
                     })
                 .CreateLogger();
 
             try
             {
-                Log.Information("Starting Com.OPPO.Mo.BackendAdmin.");
+                Log.Information("Starting BackendAdminApp.Host.");
                 CreateHostBuilder(args).Build().Run();
                 return 0;
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Com.OPPO.Mo.BackendAdmin terminated unexpectedly!");
+                Log.Fatal(ex, "BackendAdminApp.Host terminated unexpectedly!");
                 return 1;
             }
             finally
@@ -54,7 +58,7 @@ namespace Com.OPPO.Mo.BackendAdmin
         }
 
         internal static IHostBuilder CreateHostBuilder(string[] args) =>
-                Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
+            Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

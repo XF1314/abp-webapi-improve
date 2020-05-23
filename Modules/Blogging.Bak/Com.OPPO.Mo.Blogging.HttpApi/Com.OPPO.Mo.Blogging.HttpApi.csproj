@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Blogging.HttpApi</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Blogging.HttpApi</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

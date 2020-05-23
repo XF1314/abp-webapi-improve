@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Identity.MongoDB</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Identity.MongoDB</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.Identity.Domain\Com.OPPO.Mo.Identity.Domain.csproj" />
+    <ProjectReference Include="..\..\Users\Com.OPPO.Mo.Users.MongoDB\Com.OPPO.Mo.Users.MongoDB.csproj" />
+  </ItemGroup>
+</Project>

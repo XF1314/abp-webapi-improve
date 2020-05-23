@@ -1,0 +1,10 @@
+{
+  "culture": "en",
+  "texts": {
+    "Permission:InmailManagement": "Inmail management",
+    "Permission:InboxMailManagement": "InboxMail management",
+    "Permission:Create": "Create",
+    "Permission:Edit": "Edit",
+    "Permission:Delete": "Delete"
+  }
+}

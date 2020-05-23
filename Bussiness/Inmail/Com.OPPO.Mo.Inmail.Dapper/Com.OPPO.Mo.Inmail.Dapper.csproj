@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.Dapper\Com.OPPO.Mo.Dapper.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Inmail.Domain\Com.OPPO.Mo.Inmail.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

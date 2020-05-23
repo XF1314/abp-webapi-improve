@@ -11,11 +11,11 @@ namespace Com.OPPO.Mo.InternalGateway.Controllers
 {
     [RemoteService]
     [Route("api/internal-gateway/test")]
-    public class PublicGatewayController : AbpController
+    public class InternalGatewayController : AbpController
     {
         private readonly IJsonSerializer _jsonSerializer;
 
-        public PublicGatewayController(IJsonSerializer jsonSerializer)
+        public InternalGatewayController(IJsonSerializer jsonSerializer)
         {
             _jsonSerializer = jsonSerializer;
         }

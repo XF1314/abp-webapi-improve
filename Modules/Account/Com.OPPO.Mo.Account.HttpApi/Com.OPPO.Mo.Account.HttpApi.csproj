@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Account.HttpApi</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Account.HttpApi</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Identity\Com.OPPO.Mo.Identity.HttpApi\Com.OPPO.Mo.Identity.HttpApi.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Account.Application.Contracts\Com.OPPO.Mo.Account.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

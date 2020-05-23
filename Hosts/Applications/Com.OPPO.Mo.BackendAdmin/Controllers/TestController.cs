@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using Volo.Abp.Json;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Authorization.Permissions;
+using Volo.Abp.Json;
 
 namespace Com.OPPO.Mo.BackendAdmin.Controllers
 {
@@ -30,7 +30,7 @@ namespace Com.OPPO.Mo.BackendAdmin.Controllers
                 "Claims: " + User.Claims.Select(c => $"{c.Type} = {c.Value}").JoinAsString(" | ") + newLine +
                 "CurrentUser: " + _jsonSerializer.Serialize(CurrentUser) + newLine +
                 "access_token: " + await HttpContext.GetTokenAsync("access_token") + newLine +
-                "isGranted: AbpIdentity.Users: " + await _permissionChecker.IsGrantedAsync("AbpIdentity.Users")
+                "isGranted: MoIdentity.Users: " + await _permissionChecker.IsGrantedAsync("MoIdentity.Users")
             );
         }
     }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -14,13 +14,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
     <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="2.5.0" />
     <PackageReference Include="Volo.Abp.Autofac" Version="2.5.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.MongoDB" Version="2.5.0" />
-    <PackageReference Include="Volo.Abp.SettingManagement.MongoDB" Version="2.5.0" />
-    <PackageReference Include="Volo.Blogging.HttpApi" Version="2.5.0" />
+
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Bussiness\Blogging\Com.OPPO.Mo.Blogging.HttpApi\Com.OPPO.Mo.Blogging.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+    <ProjectReference Include="..\..\..\Modules\PermissionManagement\Com.OPPO.Mo.PermissionManagement.MongoDB\Com.OPPO.Mo.PermissionManagement.MongoDB.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SettingManagement\Com.OPPO.Mo.SettingManagement.MongoDB\Com.OPPO.Mo.SettingManagement.MongoDB.csproj" />
   </ItemGroup>
 
 </Project>

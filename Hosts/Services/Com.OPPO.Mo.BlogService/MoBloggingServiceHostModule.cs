@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Com.OPPO.Mo.AuditLogging.MongoDB;
+using Com.OPPO.Mo.Blogging;
+using Com.OPPO.Mo.Blogging.EntityFrameworkCore;
+using Com.OPPO.Mo.Blogging.Files;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Logging;
@@ -12,39 +18,35 @@ using System.Security.Claims;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.Auditing;
-using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.Autofac;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EventBus.RabbitMq;
 using Volo.Abp.Http.Client.IdentityModel.Web;
-using Volo.Abp.Identity;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.MongoDB;
 using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement.MongoDB;
 using Volo.Abp.Security.Claims;
-using Volo.Abp.SettingManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
 using Volo.Abp.Threading;
-using Volo.Blogging;
-using Volo.Blogging.EntityFrameworkCore;
-using Volo.Blogging.Files;
+using Volo.Abp.EntityFrameworkCore.SqlServer;
 
 namespace Com.OPPO.Mo.BloggingService
 {
     [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(AbpHttpClientIdentityModelWebModule),
-    typeof(AbpIdentityHttpApiClientModule),
+    typeof(AbpHttpClientIdentityModelWebModule),   
+    typeof(AbpEntityFrameworkCoreSqlServerModule),
     typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(AbpEventBusRabbitMqModule),
-    typeof(AbpAuditLoggingMongoDbModule),
-    typeof(AbpPermissionManagementMongoDbModule),
-    typeof(AbpSettingManagementMongoDbModule),
-    typeof(BloggingHttpApiModule),
-    typeof(BloggingEntityFrameworkCoreModule),
-    typeof(BloggingApplicationModule))]
+    typeof(MoAuditLoggingMongoDbModule),
+    typeof(MoPermissionManagementMongoDbModule),
+    typeof(MoSettingManagementMongoDbModule),
+    typeof(MoIdentityHttpApiClientModule),
+    typeof(MoBloggingHttpApiModule),
+    typeof(MoBloggingEntityFrameworkCoreModule),
+    typeof(MoBloggingApplicationModule))]
     public class MoBloggingServiceHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

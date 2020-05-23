@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Com.OPPO.Mo.TenantManagement;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Volo.Abp.Data;
@@ -6,7 +7,6 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.MultiTenancy;
-using Volo.Abp.TenantManagement;
 
 namespace Com.OPPO.Mo.IdentityService.Tenants
 {

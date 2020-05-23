@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Com.OPPO.Mo.Blogging;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Logging;
@@ -14,26 +17,47 @@ using Volo.Abp;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.Autofac;
 using Volo.Abp.Data;
-using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.MongoDB;
 using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement.MongoDB;
 using Volo.Abp.Security.Claims;
-using Volo.Abp.SettingManagement.MongoDB;
-using Volo.Abp.TenantManagement;
-using Volo.Blogging;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
+using Com.OPPO.Mo.TenantManagement;
+using Com.OPPO.Mo.PermissionManagement.Identity;
+using Com.OPPO.Mo.PermissionManagement.IdentityServer;
+using Com.OPPO.Mo.PermissionManagement;
+using Volo.Abp.Http.Client.IdentityModel.Web;
+using Com.OPPO.Mo.TenantManagement.MongoDB;
+using Com.OPPO.Mo.FeatureManagement.MongoDB;
+using Com.OPPO.Mo.FeatureManagement;
+using Com.OPPO.Mo.Inmail;
+using Com.OPPO.Mo.Identity.MongoDB;
 
 namespace Com.OPPO.Mo.InternalGateway
 {
     [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpPermissionManagementMongoDbModule),
-    typeof(AbpSettingManagementMongoDbModule),
-    typeof(AbpTenantManagementHttpApiModule),
-    typeof(AbpAspNetCoreMultiTenancyModule),
-    typeof(BloggingHttpApiModule))]
+    typeof(AbpHttpClientIdentityModelWebModule),
+    typeof(MoIdentityHttpApiModule),
+    typeof(MoIdentityMongoDbModule),
+    //typeof(MoIdentityHttpApiClientModule),
+    typeof(MoBloggingHttpApiModule),
+    //typeof(MoBloggingHttpApiClientModule),
+    typeof(MoInmailHttpApiModule),
+    //typeof(MoInmailHttpApiClientModule),
+    typeof(MoPermissionManagementDomainIdentityModule),
+    typeof(MoPermissionManagementDomainIdentityServerModule),
+    typeof(MoPermissionManagementMongoDbModule),
+    typeof(MoPermissionManagementApplicationModule),
+    typeof(MoPermissionManagementHttpApiModule),
+    typeof(MoFeatureManagementMongoDbModule),
+    typeof(MoFeatureManagementApplicationModule),
+    typeof(MoFeatureManagementHttpApiModule),
+    typeof(MoSettingManagementMongoDbModule),
+    typeof(MoTenantManagementMongoDbModule),
+    typeof(MoTenantManagementApplicationModule),
+    typeof(MoTenantManagementHttpApiModule),
+    typeof(AbpAspNetCoreMultiTenancyModule))]
     public class MoInternalGatewayHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -59,9 +83,21 @@ namespace Com.OPPO.Mo.InternalGateway
 
             context.Services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Mo Internal Gateway API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Mo Internal Gateway API", Version = "v1", Contact = new OpenApiContact { Name = "郑龙", Email = "1003885920@qq.com" } });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
+                //options.DocumentFilter<HiddenApiFilter>(); // 在接口类、方法标记属性 [HiddenApi]，可以阻止【Swagger文档】生成
+                //options.OperationFilter<AddHeaderOperationFilter>("correlationId", "Correlation Id for the request", false); // adds any string you like to the request headers - in this case, a correlation id
+                //options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                //options.OperationFilter<AddResponseHeadersFilter>();
+                //options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                //{
+                //    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+                //    In = ParameterLocation.Header,
+                //    Name = "Authorization",
+                //    Type = SecuritySchemeType.ApiKey
+                //});
+
                 // 接入identityserver4
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
@@ -76,6 +112,7 @@ namespace Com.OPPO.Mo.InternalGateway
                             // 只需要填写 api资源 的id即可，
                             // 不需要把 身份资源 的内容写上，比如openid 
                             Scopes = new Dictionary<string, string> {
+                                { "MoInternalGateway","012"},
                                 { "MoIdentityService", "123" },
                                 { "MoWorkflowService", "234" },
                                 { "MoExternalService","345"},
@@ -152,6 +189,9 @@ namespace Com.OPPO.Mo.InternalGateway
                 ctx => ctx.Request.Path.ToString().Equals("/") ||
                        ctx.Request.Path.ToString().StartsWith("/Abp/") ||
                        ctx.Request.Path.ToString().StartsWith("/api/abp/") ||
+                       ctx.Request.Path.ToString().StartsWith("/api/mo/features") ||
+                       ctx.Request.Path.ToString().StartsWith("/api/mo/permissions") ||
+                       ctx.Request.Path.ToString().StartsWith("/api/multi-tenancy/tenants")||
                        ctx.Request.Path.ToString().StartsWith("/api/internal-gateway/", StringComparison.OrdinalIgnoreCase),
                 app2 =>
                 {

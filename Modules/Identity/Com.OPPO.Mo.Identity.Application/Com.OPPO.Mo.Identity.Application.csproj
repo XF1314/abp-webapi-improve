@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Identity.Application</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Identity.Application</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PermissionManagement\Com.OPPO.Mo.PermissionManagement.Application\Com.OPPO.Mo.PermissionManagement.Application.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Identity.Application.Contracts\Com.OPPO.Mo.Identity.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Identity.Domain\Com.OPPO.Mo.Identity.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

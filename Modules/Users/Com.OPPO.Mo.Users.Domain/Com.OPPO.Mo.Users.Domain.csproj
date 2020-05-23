@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.Users.Domain</AssemblyName>
+    <PackageId>Com.OPPO.Mo.Users.Domain</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Com.OPPO.Mo.Users</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.5.0" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Users.Abstractions\Com.OPPO.Mo.Users.Abstractions.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.Users.Domain.Shared\Com.OPPO.Mo.Users.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

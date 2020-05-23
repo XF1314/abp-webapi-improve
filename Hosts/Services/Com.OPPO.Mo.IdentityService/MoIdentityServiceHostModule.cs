@@ -15,31 +15,31 @@ using Volo.Abp.Security.Claims;
 using Volo.Abp.AspNetCore;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.Auditing;
-using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.EventBus.RabbitMq;
-using Volo.Abp.Identity;
-using Volo.Abp.Identity.MongoDB;
-using Volo.Abp.PermissionManagement.MongoDB;
-using Volo.Abp.SettingManagement.MongoDB;
-using Volo.Abp.TenantManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
+using  Com.OPPO.Mo.TenantManagement.MongoDB;
 using Microsoft.IdentityModel.Logging;
 using Volo.Abp.MongoDB;
 using Volo.Abp.Data;
 using System;
+using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.AuditLogging.MongoDB;
+using Com.OPPO.Mo.Identity.MongoDB;
 
 namespace Com.OPPO.Mo.IdentityService
 {
     [DependsOn(
     typeof(AbpAutofacModule),
     typeof(AbpEventBusRabbitMqModule),
-    typeof(AbpAuditLoggingMongoDbModule),
-    typeof(AbpPermissionManagementMongoDbModule),
-    typeof(AbpSettingManagementMongoDbModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpIdentityMongoDbModule),
-    typeof(AbpIdentityApplicationModule),
+    typeof(MoAuditLoggingMongoDbModule),
+    typeof(MoPermissionManagementMongoDbModule),
+    typeof(MoSettingManagementMongoDbModule),
+    typeof(MoIdentityHttpApiModule),
+    typeof(MoIdentityMongoDbModule),
+    typeof(MoIdentityApplicationModule),
     typeof(AbpAspNetCoreMultiTenancyModule),
-    typeof(AbpTenantManagementMongoDbModule))]
+    typeof(MoTenantManagementMongoDbModule))]
     public class MoIdentityServiceHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

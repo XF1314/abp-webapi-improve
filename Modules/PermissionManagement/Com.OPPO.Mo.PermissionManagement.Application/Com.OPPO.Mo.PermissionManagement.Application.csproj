@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.PermissionManagement.Application</AssemblyName>
+    <PackageId>Com.OPPO.Mo.PermissionManagement。Application</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Com.OPPO.Mo.PermissionManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.PermissionManagement.Application.Contracts\Com.OPPO.Mo.PermissionManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.PermissionManagement.Domain\Com.OPPO.Mo.PermissionManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+﻿{
+  "culture": "cs",
+  "texts": {
+    "Mo.IdentityServer:DuplicateIdentityResourceName": "Název Identity Resource již existuje: {Name}",
+    "Mo.IdentityServer:DuplicateApiResourceName": "Název Api Resource již existuje: {Name}",
+    "Mo.IdentityServer:DuplicateClientId": "ClientId již existuje: {ClientId}"
+  }
+}

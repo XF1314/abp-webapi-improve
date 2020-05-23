@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.BackgroundJobs.Domain.Shared\Com.OPPO.Mo.BackgroundJobs.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

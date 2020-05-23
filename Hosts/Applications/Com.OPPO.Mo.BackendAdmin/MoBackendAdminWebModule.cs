@@ -1,77 +1,71 @@
-﻿using IdentityModel;
+﻿using System;
 using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
-using Volo.Abp.Account;
 using Volo.Abp.AspNetCore.Authentication.OAuth;
 using Volo.Abp.AspNetCore.Mvc.Client;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
-using Volo.Abp.AspNetCore.Serilog;
-using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.Autofac;
-using Volo.Abp.BackgroundJobs.MongoDB;
-using Volo.Abp.Data;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.FeatureManagement.MongoDB;
 using Volo.Abp.Http.Client.IdentityModel.Web;
-using Volo.Abp.Identity;
-using Volo.Abp.Identity.MongoDB;
-using Volo.Abp.Identity.Web;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
-using Volo.Abp.MongoDB;
 using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.PermissionManagement.HttpApi;
-using Volo.Abp.PermissionManagement.MongoDB;
-using Volo.Abp.PermissionManagement.Web;
-using Volo.Abp.Security.Claims;
-using Volo.Abp.SettingManagement.MongoDB;
-using Volo.Abp.SettingManagement.Web;
-using Volo.Abp.Threading;
 using Volo.Abp.UI.Navigation;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.Identity.Web;
+using Com.OPPO.Mo.TenantManagement;
+using Com.OPPO.Mo.TenantManagement.Web;
+using Com.OPPO.Mo.Blogging;
+using Com.OPPO.Mo.PermissionManagement;
+using Com.OPPO.Mo.FeatureManagement;
+using Volo.Abp.Data;
 using Volo.Abp.UI.Navigation.Urls;
-using Volo.Blogging;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.Web;
+using Com.OPPO.Mo.PermissionManagement.Web;
+using Com.OPPO.Mo.AuditLogging.MongoDB;
+using Volo.Abp.AspNetCore.Serilog;
+using Com.OPPO.Mo.BackgroundJobs.MongoDB;
+using Volo.Abp.MongoDB;
+using Volo.Abp.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace Com.OPPO.Mo.BackendAdmin
 {
     [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(AbpAspNetCoreMvcClientModule),
-    typeof(AbpHttpClientIdentityModelWebModule),
     typeof(AbpAspNetCoreSerilogModule),
+    typeof(AbpAspNetCoreMvcClientModule),
     typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+    typeof(AbpHttpClientIdentityModelWebModule),
     typeof(AbpAspNetCoreAuthenticationOAuthModule),
-    typeof(AbpAuditLoggingMongoDbModule),
-    typeof(AbpBackgroundJobsMongoDbModule),
-    typeof(AbpIdentityMongoDbModule),
-    typeof(AbpIdentityHttpApiClientModule),
-    typeof(AbpIdentityWebModule),
-    typeof(AbpAccountApplicationModule),
-    typeof(BloggingHttpApiClientModule),
-    typeof(BloggingWebModule),
-    typeof(AbpPermissionManagementMongoDbModule),
-    typeof(AbpPermissionManagementApplicationModule),
-    typeof(AbpPermissionManagementHttpApiModule),
-    typeof(AbpPermissionManagementWebModule),
-    typeof(AbpFeatureManagementMongoDbModule),
-    typeof(AbpFeatureManagementApplicationModule),
-    typeof(AbpFeatureManagementHttpApiModule),
-    typeof(AbpFeatureManagementWebModule),
-    typeof(AbpSettingManagementMongoDbModule),
-    typeof(AbpSettingManagementWebModule))]
+
+    typeof(MoBackgroundJobsMongoDbModule),
+    typeof(MoAuditLoggingMongoDbModule),
+
+    typeof(MoIdentityHttpApiClientModule),
+    typeof(MoIdentityWebModule),
+
+    typeof(MoTenantManagementHttpApiClientModule),
+    typeof(MoTenantManagementWebModule),
+
+    typeof(MoBloggingHttpApiClientModule),
+    typeof(MoBloggingWebModule),
+
+    typeof(MoPermissionManagementHttpApiClientModule),
+    typeof(MoPermissionManagementWebModule),
+
+    typeof(MoFeatureManagementHttpApiClientModule),
+    typeof(MoFeatureManagementWebModule),
+
+    typeof(MoSettingManagementMongoDbModule),
+    typeof(MoSettingManagementWebModule))]
     public class MoBackendAdminWebModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -86,49 +80,55 @@ namespace Com.OPPO.Mo.BackendAdmin
             {
                 options.Languages.Add(new LanguageInfo("en", "en", "English"));
             });
+
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MoConsts.IsMultiTenancyEnabled;
             });
+
             Configure<AbpNavigationOptions>(options =>
             {
                 options.MenuContributors.Add(new BackendAdminAppMenuContributor(configuration));
             });
 
             context.Services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = "Cookies";
-                options.DefaultChallengeScheme = "oidc";
-            })
-            .AddCookie()
-            //.AddCookie("Cookies", options =>
-            //{
-            //    options.ExpireTimeSpan = TimeSpan.FromDays(365);
-            //})
-            .AddOpenIdConnect("oidc", options =>
+                {
+                    options.DefaultScheme = "Cookies";
+                    options.DefaultChallengeScheme = "oidc";
+                })
+                .AddCookie("Cookies", options =>
+                {
+                    options.ExpireTimeSpan = TimeSpan.FromDays(365);
+                })
+                .AddOpenIdConnect("oidc", options =>
                 {
                     options.Authority = configuration["AuthServer:Authority"];
                     options.ClientId = configuration["AuthServer:ClientId"];
                     options.ClientSecret = configuration["AuthServer:ClientSecret"];
+                    options.SaveTokens = true;
                     options.RequireHttpsMetadata = false;
                     options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
-                    options.SaveTokens = true;
                     options.GetClaimsFromUserInfoEndpoint = true;
                     options.Scope.Add("role");
                     options.Scope.Add("email");
                     options.Scope.Add("phone");
+                    options.Scope.Add("offline_access");
+                    options.Scope.Add("MoInternalGateway");
+                    options.Scope.Add("MoExternalService");
+                    options.Scope.Add("MoIdentityService");
+                    options.Scope.Add("MoInmailService");
+                    options.Scope.Add("MoWorkflowService");
+                    options.Scope.Add("MoBloggingService");
                     options.ClaimActions.MapAbpClaimTypes();
                 });
-
 
             Configure<AbpMongoModelBuilderConfigurationOptions>(options =>
             {
                 options.CollectionPrefix = MoConsts.ProjectCode;
             });
-
             context.Services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Mo Backend Admin Application API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend Admin Application API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
             });
 
@@ -144,7 +144,6 @@ namespace Com.OPPO.Mo.BackendAdmin
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            IdentityModelEventSource.ShowPII = true;
             var app = context.GetApplicationBuilder();
 
             app.UseCorrelationId();
@@ -160,7 +159,7 @@ namespace Com.OPPO.Mo.BackendAdmin
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Mo Backend Admin Application API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Backend Admin Application API");
             });
             app.Use(async (ctx, next) =>
             {

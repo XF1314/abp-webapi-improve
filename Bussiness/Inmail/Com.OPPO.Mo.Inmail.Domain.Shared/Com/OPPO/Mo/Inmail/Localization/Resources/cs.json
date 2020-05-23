@@ -1,0 +1,10 @@
+{
+  "culture": "cs",
+  "texts": {
+    "Permission:InmailManagement": "便签管理",
+    "Permission:InboxMailManagement": "收件箱管理",
+    "Permission:Create": "创建",
+    "Permission:Edit": "更新",
+    "Permission:Delete": "删除"
+  }
+}

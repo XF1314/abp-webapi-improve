@@ -5,19 +5,20 @@ using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.Uow;
-using Volo.Abp.Account.Settings;
 using Volo.Abp.Authorization.Permissions;
-using Volo.Abp.Identity;
-using Volo.Abp.IdentityServer.ApiResources;
-using Volo.Abp.IdentityServer.Clients;
-using Volo.Abp.IdentityServer.IdentityResources;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
 using static IdentityModel.OidcConstants;
 using IdentityServer4.Models;
-using MoApiResources = Volo.Abp.IdentityServer.ApiResources;
-using MoClients = Volo.Abp.IdentityServer.Clients;
+using MoApiResources = Com.OPPO.Mo.IdentityServer.ApiResources;
+using MoClients = Com.OPPO.Mo.IdentityServer.Clients;
+using Com.OPPO.Mo.PermissionManagement;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.Account.Settings;
+using Com.OPPO.Mo.IdentityServer.ApiResources;
+using Com.OPPO.Mo.IdentityServer.Clients;
+using Com.OPPO.Mo.IdentityServer.IdentityResources;
+using Com.OPPO.Mo.SettingManagement;
+using Com.OPPO.Mo.TenantManagement;
+using Microsoft.AspNetCore.Identity;
 
 namespace Com.OPPO.Mo.AuthServer
 {
@@ -134,25 +135,28 @@ namespace Com.OPPO.Mo.AuthServer
 
             await CreateClientAsync(
                 name: "mo-console-client",
-                scopes: new[] { "MoExternalService", "MoBloggingService", "MoInmailService", "MoWorkflowService", "MoPublicGateway", "MoInternalGateway" },
+                scopes: new[] { "MoExternalService", "MoBloggingService", "MoInmailService", "MoWorkflowService", "MoPublicGateway", "MoInternalGateway", "MoIdentityService" },
                 grantTypes: new[] { "client_credentials", "password" },
                 secret: commonSecret,
-                permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default, "ProductManagement.Product" }
+                permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default,"MoInmail.InboxMails"}
             );
 
             await CreateClientAsync(
                 name: "mo-backend-admin-client",
-                scopes: commonScopes.Union(new[] { "MoInternalGateway", "MoIdentityService", "MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService" }),
-                grantTypes: new[] { "hybrid" },
+                scopes: commonScopes.Union(new[] { "MoInternalGateway", "MoIdentityService", "MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService", "offline_access" }),
+                grantTypes: new[] { "hybrid" },//implict
                 secret: commonSecret,
-                permissions: new[] { IdentityPermissions.Users.Default, "InmailManagement.Mail" },
-                redirectUris: new List<string> { "http://localhost:65057/signin-oidc" },
-                postLogoutRedirectUri: "http://localhost:65057/signout-callback-oidc"
+                //requireConsent: true,
+                //requirePkce: true,
+                permissions: new[] { IdentityPermissions.Users.Default},
+                allowedCorsOrigins:new[] { "http://localhost:51462" },
+                redirectUris: new List<string> { "http://localhost:51462/signin-oidc", "http://localhost:51462/swagger/oauth2-redirect.html" },
+                postLogoutRedirectUri: "http://localhost:51462/signout-callback-oidc"
             );
             await CreateClientAsync(
                  name: "mo-identity-service-client",
                 scopes: new[] { "MoInternalGateway", "MoIdentityService", "offline_access" },
-                grantTypes: new[] { "authorization_code", "implict" },//implicit
+                grantTypes: new[] { "authorization_code"},
                 secret: commonSecret,
                 requireConsent: true,
                 requirePkce: true,
@@ -161,8 +165,19 @@ namespace Com.OPPO.Mo.AuthServer
                 permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
             );
             await CreateClientAsync(
+                 name: "mo-inmail-service-client",
+                scopes: new[] { "MoInmailService", "offline_access" },
+                grantTypes: new[] { "authorization_code" },
+                secret: commonSecret,
+                requireConsent: true,
+                requirePkce: true,
+                allowedCorsOrigins: new List<string> { "http://localhost:54541" },
+                redirectUris: new List<string> { "http://localhost:54541/swagger/oauth2-redirect.html", "http://localhost:54541/signin-oidc" },
+                permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
+            );
+            await CreateClientAsync(
                  name: "mo-gateway-internal",
-                scopes: new[] { "MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService", "MoIdentityService", "offline_access" },
+                scopes: new[] { "MoInternalGateway","MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService", "MoIdentityService", "offline_access" },
                 grantTypes: new[] { "authorization_code" },//implicit
                 secret: commonSecret,
                 requireConsent: true,

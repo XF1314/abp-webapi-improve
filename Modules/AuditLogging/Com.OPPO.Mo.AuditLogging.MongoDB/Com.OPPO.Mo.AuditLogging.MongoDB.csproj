@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MongoDB" Version="2.5.0" />
+    <ProjectReference Include="..\..\Users\Com.OPPO.Mo.Users.MongoDB\Com.OPPO.Mo.Users.MongoDB.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.AuditLogging.Domain\Com.OPPO.Mo.AuditLogging.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

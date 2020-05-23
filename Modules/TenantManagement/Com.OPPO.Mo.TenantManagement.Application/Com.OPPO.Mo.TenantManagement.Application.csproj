@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.TenantManagement.Application</AssemblyName>
+    <PackageId>Com.OPPO.Mo.TenantManagement.Application</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.UI" Version="2.5.0" />
+    <ProjectReference Include="..\Com.OPPO.Mo.TenantManagement.Application.Contracts\Com.OPPO.Mo.TenantManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.TenantManagement.Domain\Com.OPPO.Mo.TenantManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

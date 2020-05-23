@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.PermissionManagement.MongoDB</AssemblyName>
+    <PackageId>Com.OPPO.Mo.PermissionManagement.MongoDB</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Com.OPPO.Mo.PermissionManagement.MongoDB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.PermissionManagement.Domain\Com.OPPO.Mo.PermissionManagement.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.MongoDB" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>

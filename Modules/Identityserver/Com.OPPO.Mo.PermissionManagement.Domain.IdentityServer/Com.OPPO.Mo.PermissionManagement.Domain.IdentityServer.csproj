@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Com.OPPO.Mo.PermissionManagement.Domain.IdentityServer</AssemblyName>
+    <PackageId>Com.OPPO.Mo.PermissionManagement.Domain.IdentityServer</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PermissionManagement\Com.OPPO.Mo.PermissionManagement.Domain\Com.OPPO.Mo.PermissionManagement.Domain.csproj" />
+    <ProjectReference Include="..\Com.OPPO.Mo.IdentityServer.Domain.Shared\Com.OPPO.Mo.IdentityServer.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

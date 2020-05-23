@@ -1,11 +1,11 @@
-﻿using Volo.Abp.AuditLogging.MongoDB;
-using Volo.Abp.FeatureManagement.MongoDB;
-using Volo.Abp.Identity.MongoDB;
-using Volo.Abp.IdentityServer.MongoDB;
+﻿using Com.OPPO.Mo.Identity.MongoDB;
+using Com.OPPO.Mo.IdentityServer.MongoDB;
 using Volo.Abp.MongoDB;
-using Volo.Abp.PermissionManagement.MongoDB;
-using Volo.Abp.SettingManagement.MongoDB;
-using Volo.Abp.TenantManagement.MongoDB;
+using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
+using  Com.OPPO.Mo.TenantManagement.MongoDB;
+using Com.OPPO.Mo.AuditLogging.MongoDB;
+using Com.OPPO.Mo.FeatureManagement.MongoDB;
 
 namespace Com.OPPO.Mo.AuthServer
 {
