@@ -31,6 +31,7 @@ namespace Com.OPPO.Mo.Identity
 
         }
 
+        [Obsolete]
         public virtual string LocalizeMessage(LocalizationContext context)
         {
             return IdentityResult.LocalizeErrors(context.LocalizerFactory.Create<IdentityResource>());

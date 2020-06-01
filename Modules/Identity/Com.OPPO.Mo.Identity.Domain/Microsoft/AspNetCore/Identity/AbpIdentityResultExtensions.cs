@@ -25,6 +25,7 @@ namespace Microsoft.AspNetCore.Identity
             throw new MoIdentityResultException(identityResult);
         }
 
+        [Obsolete]
         public static string LocalizeErrors(this IdentityResult identityResult, IStringLocalizer localizer)
         {
             if (identityResult.Succeeded)
@@ -40,6 +41,7 @@ namespace Microsoft.AspNetCore.Identity
             return identityResult.Errors.Select(err => LocalizeErrorMessage(err, localizer)).JoinAsString(", ");
         }
 
+        [Obsolete]
         public static string LocalizeErrorMessage(this IdentityError error, IStringLocalizer localizer)
         {
             var key = $"Identity.{error.Code}";

@@ -53,8 +53,8 @@ namespace Com.OPPO.Mo.AuthServer
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            AbpCommonDbProperties.DbTablePrefix = MoConsts.ProjectCode;
             var configuration = context.Services.GetConfiguration();
+            AbpCommonDbProperties.DbTablePrefix = MoConsts.ProjectCode;
             context.Services.AddMongoDbContext<AuthServerDbContext>(options =>
             {
                 options.AddDefaultRepositories();

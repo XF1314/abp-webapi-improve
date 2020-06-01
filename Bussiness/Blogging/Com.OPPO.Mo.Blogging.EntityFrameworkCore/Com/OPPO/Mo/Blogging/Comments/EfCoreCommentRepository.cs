@@ -11,7 +11,7 @@ namespace Com.OPPO.Mo.Blogging.Comments
 {
     public class EfCoreCommentRepository : EfCoreRepository<IBloggingDbContext, Comment, Guid>, ICommentRepository
     {
-        public EfCoreCommentRepository(IDbContextProvider<IBloggingDbContext> dbContextProvider) 
+        public EfCoreCommentRepository(IDbContextProvider<IBloggingDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
         }
@@ -40,6 +40,8 @@ namespace Com.OPPO.Mo.Blogging.Comments
         {
             var recordsToDelete = DbSet.Where(pt => pt.PostId == id);
             DbSet.RemoveRange(recordsToDelete);
+
+            await Task.FromResult(0);
         }
     }
 }
