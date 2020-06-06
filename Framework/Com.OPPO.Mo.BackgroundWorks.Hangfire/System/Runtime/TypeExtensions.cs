@@ -15,6 +15,11 @@ namespace System.Runtime
             return $"{methodInfo.DeclaringType.ToGenericTypeString()}.{methodInfo.Name}";
         }
 
+        public static Type[] GetAllGenericArguments(this TypeInfo type)
+        {
+            return type.GenericTypeArguments.Length > 0 ? type.GenericTypeArguments : type.GenericTypeParameters;
+        }
+
         public static string ToGenericTypeString(this Type type)
         {
             if (!type.GetTypeInfo().IsGenericType)
@@ -28,6 +33,7 @@ namespace System.Runtime
                     .ReplacePlusWithDotInNestedTypeName()
                     .ReplaceGenericParametersInGenericTypeName(type);
         }
+
         private static string GetFullNameWithoutNamespace(this Type type)
         {
             if (type.IsGenericParameter)
@@ -41,10 +47,12 @@ namespace System.Runtime
                 ? type.FullName.Substring(type.Namespace.Length + dotLength)
                 : type.FullName;
         }
+
         private static string ReplacePlusWithDotInNestedTypeName(this string typeName)
         {
             return typeName.Replace('+', '.');
         }
+
         private static string ReplaceGenericParametersInGenericTypeName(this string typeName, Type type)
         {
             var genericArguments = type.GetTypeInfo().GetAllGenericArguments();
@@ -62,10 +70,6 @@ namespace System.Runtime
             });
 
             return typeName;
-        }
-        public static Type[] GetAllGenericArguments(this TypeInfo type)
-        {
-            return type.GenericTypeArguments.Length > 0 ? type.GenericTypeArguments : type.GenericTypeParameters;
         }
     }
 }

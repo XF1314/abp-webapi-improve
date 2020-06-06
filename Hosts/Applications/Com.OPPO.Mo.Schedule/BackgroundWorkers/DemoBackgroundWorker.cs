@@ -1,6 +1,8 @@
 ﻿using Castle.Core.Logging;
+using Com.Ctrip.Framework.Apollo;
 using Com.OPPO.Mo.BackgroundWorkers.Hangfire;
 using Hangfire.Server;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -13,18 +15,21 @@ namespace Com.OPPO.Mo.Schedule.BackgroundWorkers
 {
     public class DemoBackgroundWorker : BackgroundWorkerBase, IHangfireBackgroundWorker
     {
+        private readonly IConfiguration _configuration;
         private readonly ILogger<DemoBackgroundWorker> _logger;
 
-        public DemoBackgroundWorker(ILogger<DemoBackgroundWorker> logger)
+        public DemoBackgroundWorker(IConfiguration configuration, ILogger<DemoBackgroundWorker> logger)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public async Task Execute(PerformContext performContext)
         {
+            _logger.LogInformation(_configuration["TestKey"]);
             _logger.LogInformation(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
 
-            return await Task.FromResult(0);
+            await Task.FromResult(0);
         }
     }
 }

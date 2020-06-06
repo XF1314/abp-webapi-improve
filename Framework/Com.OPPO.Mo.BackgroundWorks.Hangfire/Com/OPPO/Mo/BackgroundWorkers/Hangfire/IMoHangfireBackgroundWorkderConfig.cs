@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
 {
-    public interface IMoHangfireBackgroundWorkderOptions
+    public interface IMoHangfireBackgroundWorkderConfig
     {
         /// <summary>
         /// The worker id represents for <see cref="HangfireBackgroundWorkerInfo.BackgroundWorkerId"/>

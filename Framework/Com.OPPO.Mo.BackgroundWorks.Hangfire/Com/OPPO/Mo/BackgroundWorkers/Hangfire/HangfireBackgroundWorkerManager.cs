@@ -15,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Volo.Abp.BackgroundWorkers;
 using Volo.Abp.DependencyInjection;
+using System.Runtime;
 
 namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
 {
@@ -23,7 +24,7 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
     {
         private readonly IConfiguration _configuration;
         private readonly IRecurringJobManager _recurringJobManager;
-        private readonly IOptionsMonitor<List<MoHangfireBackgroundWorkerOptions>> _optionsMonitor;
+        private readonly IOptionsMonitor<MoHangfireBackgroundWorkerOption> _optionsMonitor;
         private readonly ObjectAccessor<HangfireBackgroundWorkerInfos> _hangfireBackgroundWorkerAccessor;
 
         public ILogger<HangfireBackgroundWorkerManager> Logger { get; set; }
@@ -32,7 +33,7 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
             IConfiguration configuration,
             IRecurringJobManager recurringJobManager,
             ObjectAccessor<HangfireBackgroundWorkerInfos> objectAccessor,
-            IOptionsMonitor<List<MoHangfireBackgroundWorkerOptions>> optionsMonitor)
+            IOptionsMonitor<MoHangfireBackgroundWorkerOption> optionsMonitor)
         {
             _configuration = configuration;
             _optionsMonitor = optionsMonitor;
@@ -51,22 +52,22 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
                 {
                     var methodInfo = hangfireBackgroundWorkerType.GetMethod("Execute");
                     var hangfireBackgroundWorkerAttribute = hangfireBackgroundWorkerType.GetCustomAttribute<HangfireBackgroundWorkerAttribute>(false);
-                    var hangfireBackgroundWorkerOptions = hangfireBackgroundWorkerAttribute as IMoHangfireBackgroundWorkderOptions;
-                    hangfireBackgroundWorkerOptions.WorkerType = backgroundWorker.GetType();
-                    var validateResult = ValidateBackgroundWorkerOptions(hangfireBackgroundWorkerOptions);
+                    var hangfireBackgroundWorkderConfig = hangfireBackgroundWorkerAttribute as IMoHangfireBackgroundWorkderConfig;
+                    hangfireBackgroundWorkderConfig.WorkerType = backgroundWorker.GetType();
+                    var validateResult = ValidateBackgroundWorkerConfigs(hangfireBackgroundWorkderConfig);
                     if (!validateResult.IsOk())
                         Logger.LogWarning(validateResult.Message);
                     else
                     {
                         var hangfireBackgroundWorkerInfo = new HangfireBackgroundWorkerInfo
                         {
-                            WorkerId = hangfireBackgroundWorkerOptions.WorkerId,
-                            Cron = hangfireBackgroundWorkerOptions.Cron,
-                            TimeZone = hangfireBackgroundWorkerOptions.TimeZone,
-                            QueueName = hangfireBackgroundWorkerOptions.QueueName,
+                            WorkerId = hangfireBackgroundWorkderConfig.WorkerId,
+                            Cron = hangfireBackgroundWorkderConfig.Cron,
+                            TimeZone = hangfireBackgroundWorkderConfig.TimeZone,
+                            QueueName = hangfireBackgroundWorkderConfig.QueueName,
                             Method = methodInfo,
-                            ExtendedData = hangfireBackgroundWorkerOptions.ExtendData,
-                            IsEnabled = hangfireBackgroundWorkerOptions.IsEnabled
+                            ExtendedData = hangfireBackgroundWorkderConfig.ExtendData,
+                            IsEnabled = hangfireBackgroundWorkderConfig.IsEnabled
                         };
 
                         var parameterInfos = methodInfo.GetParameters();
@@ -87,49 +88,56 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
             GlobalConfiguration.Configuration.UseFilter(new HangfireExtendedDataJobFilter(_hangfireBackgroundWorkerAccessor));
             ChangeToken.OnChange(() => _configuration.GetReloadToken(), () =>
             {
-                var hangfireBackgroundWorkerOptions = _optionsMonitor.CurrentValue;
-                if (hangfireBackgroundWorkerOptions is null)
-                    return;
-                else
-                {
-                    hangfireBackgroundWorkerOptions.ForEach(x =>
-                    {
-                        var validateResult = ValidateBackgroundWorkerOptions(x);
-                        if (!validateResult.IsOk())
-                            Logger.LogWarning(validateResult.Message);
-                        else
-                        {
-                            if (!typeof(IHangfireBackgroundWorker).IsAssignableFrom(x.WorkerType))
-                                Logger.LogWarning($"后台任务【{x.WorkerType}】需要实现【{typeof(IHangfireBackgroundWorker)}】接口");
-                            else
-                            {
-                                var methodInfo = x.WorkerType.GetMethod("Execute");
-                                var hangfireBackgroundWorkerInfo = new HangfireBackgroundWorkerInfo
-                                {
-                                    WorkerId = x.WorkerId,
-                                    Cron = x.Cron,
-                                    TimeZone = x.TimeZone,
-                                    QueueName = x.QueueName,
-                                    Method = methodInfo,
-                                    ExtendedData = x.ExtendData,
-                                    IsEnabled = x.IsEnabled
-                                };
-
-                                var parameterInfos = methodInfo.GetParameters();
-                                var arguments = parameterInfos.Select(x => x.ParameterType.IsValueType ? Activator.CreateInstance(x.ParameterType) : null);
-                                var hangfireBackgroundJob = new Job(hangfireBackgroundWorkerInfo.Method, arguments);
-                                var recurringJobOptions = new RecurringJobOptions { QueueName = hangfireBackgroundWorkerInfo.QueueName, TimeZone = hangfireBackgroundWorkerInfo.TimeZone };
-                                _recurringJobManager.AddOrUpdate(hangfireBackgroundWorkerInfo.WorkerId, hangfireBackgroundJob, hangfireBackgroundWorkerInfo.Cron, recurringJobOptions);
-
-                                _hangfireBackgroundWorkerAccessor.Value.RemoveAll(x => x.WorkerId == hangfireBackgroundWorkerInfo.WorkerId);
-                                _hangfireBackgroundWorkerAccessor.Value.Add(hangfireBackgroundWorkerInfo);
-                            }
-                        }
-                    });
-                }
+                ReLoadBackgroundWorker();
             });
+            ReLoadBackgroundWorker();
 
             await Task.FromResult(0);
+        }
+
+        private void ReLoadBackgroundWorker()
+        {
+            var hangfireBackgroundWorkerOption = _optionsMonitor.CurrentValue;
+
+            if (hangfireBackgroundWorkerOption is null)
+                return;
+            else
+            {
+                hangfireBackgroundWorkerOption.BackgroundWorkers.ForEach(x =>
+                {
+                   var validateResult = ValidateBackgroundWorkerConfigs(x);
+                    if (!validateResult.IsOk())
+                        Logger.LogWarning(validateResult.Message);
+                    else
+                    {
+                        if (!typeof(IHangfireBackgroundWorker).IsAssignableFrom(x.WorkerType))
+                            Logger.LogWarning($"后台任务【{x.WorkerType}】需要实现【{typeof(IHangfireBackgroundWorker)}】接口");
+                        else
+                        {
+                            var methodInfo = x.WorkerType.GetMethod("Execute");
+                            var hangfireBackgroundWorkerInfo = new HangfireBackgroundWorkerInfo
+                            {
+                                WorkerId = x.WorkerId,
+                                Cron = x.Cron,
+                                TimeZone = x.TimeZone,
+                                QueueName = x.QueueName,
+                                Method = methodInfo,
+                                ExtendedData = x.ExtendData,
+                                IsEnabled = x.IsEnabled
+                            };
+
+                            var parameterInfos = methodInfo.GetParameters();
+                            var arguments = parameterInfos.Select(x => x.ParameterType.IsValueType ? Activator.CreateInstance(x.ParameterType) : null);
+                            var hangfireBackgroundJob = new Job(hangfireBackgroundWorkerInfo.Method, arguments);
+                            var recurringJobOptions = new RecurringJobOptions { QueueName = hangfireBackgroundWorkerInfo.QueueName, TimeZone = hangfireBackgroundWorkerInfo.TimeZone };
+                            _recurringJobManager.AddOrUpdate(hangfireBackgroundWorkerInfo.WorkerId, hangfireBackgroundJob, hangfireBackgroundWorkerInfo.Cron, recurringJobOptions);
+
+                            _hangfireBackgroundWorkerAccessor.Value.RemoveAll(x => x.WorkerId == hangfireBackgroundWorkerInfo.WorkerId);
+                            _hangfireBackgroundWorkerAccessor.Value.Add(hangfireBackgroundWorkerInfo);
+                        }
+                    }
+                });
+            }
         }
 
         public async Task StopAsync(CancellationToken cancellationToken = default)
@@ -137,7 +145,7 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
             await Task.FromResult(0);
         }
 
-        private Result ValidateBackgroundWorkerOptions(IMoHangfireBackgroundWorkderOptions backgroundWorkderOptions)
+        private Result ValidateBackgroundWorkerConfigs(IMoHangfireBackgroundWorkderConfig backgroundWorkderOptions)
         {
             if (backgroundWorkderOptions.WorkerType == null)
                 return Result.FromError($"后台任务配置：{JsonConvert.SerializeObject(backgroundWorkderOptions)},缺失后台任务类型信息。");

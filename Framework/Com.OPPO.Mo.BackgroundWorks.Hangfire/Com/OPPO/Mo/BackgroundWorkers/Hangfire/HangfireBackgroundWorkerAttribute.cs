@@ -9,7 +9,7 @@ using System.Text;
 namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class HangfireBackgroundWorkerAttribute : Attribute, IMoHangfireBackgroundWorkderOptions
+    public class HangfireBackgroundWorkerAttribute : Attribute, IMoHangfireBackgroundWorkderConfig
     {
         /// <summary>
         /// <see cref="HangfireBackgroundWorkerAttribute"/>

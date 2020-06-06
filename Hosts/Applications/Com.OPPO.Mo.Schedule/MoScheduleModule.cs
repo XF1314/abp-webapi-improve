@@ -44,11 +44,6 @@ namespace Com.OPPO.Mo.Schedule
             var configuration = context.Services.GetConfiguration();
             Configure<AbpLocalizationOptions>(options =>
                 options.Languages.Add(new LanguageInfo("en", "en", "English")));
-            Configure<List<MoHangfireBackgroundWorkerOptions>>(options =>
-            {
-                options = JsonConvert.DeserializeObject<List<MoHangfireBackgroundWorkerOptions>>(configuration["HangfireBackgroundWorders"]);
-            });
-
             context.Services.AddStackExchangeRedisCache(options =>
                 options.Configuration = configuration["Redis:Configuration"]);
 

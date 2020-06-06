@@ -1,4 +1,6 @@
-﻿using Com.OPPO.Mo.Schedule.Custom;
+﻿using Com.Ctrip.Framework.Apollo;
+using Com.Ctrip.Framework.Apollo.Enums;
+using Com.OPPO.Mo.Schedule.Custom;
 using Hangfire;
 using Hangfire.Client;
 using Hangfire.Common;
@@ -27,13 +29,13 @@ namespace Com.OPPO.Mo.Schedule
             Console.WriteLine("Hello World!");
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables()
                 .Build();
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
                 .Enrich.WithProperty("Application", "Schedule")
                 .Enrich.FromLogContext()
                 .WriteTo.File("Logs/logs.txt")
@@ -65,7 +67,14 @@ namespace Com.OPPO.Mo.Schedule
 
         internal static IHostBuilder CreateHostBuilder(IConfiguration configuration, string[] args) =>
             Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
-            .ConfigureLogging(x => x.AddConsole().SetMinimumLevel(LogLevel.Information))
+            .ConfigureLogging(loggerBuilder => loggerBuilder.AddConsole().SetMinimumLevel(LogLevel.Information))
+            .ConfigureAppConfiguration(configurationBuilder => configurationBuilder
+                .AddApollo(configuration.GetSection("Apollo"))
+                .AddDefault(ConfigFileFormat.Xml)
+                .AddDefault(ConfigFileFormat.Json)
+                .AddDefault(ConfigFileFormat.Yml)
+                .AddDefault(ConfigFileFormat.Yaml)
+                .AddDefault())
             .ConfigureWebHostDefaults(webBuilder => webBuilder
                 .UseUrls(configuration["AppSelfUrl"])
                 .UseStartup<Startup>()

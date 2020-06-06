@@ -16,8 +16,10 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            var configuration = context.Services.GetConfiguration();
             context.Services.AddObjectAccessor(new HangfireBackgroundWorkerInfos());
             context.Services.AddConventionalRegistrar(new MoHangfireConventionalRegistrar());
+            context.Services.Configure<MoHangfireBackgroundWorkerOption>(configuration);
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
