@@ -10,7 +10,7 @@ using Volo.Abp.Modularity;
 
 namespace Com.OPPO.Mo.ConsoleClient
 {
-    [DependsOn(typeof( AbpAutofacModule))]
+    [DependsOn(typeof(AbpAutofacModule))]
     [DependsOn(typeof(AbpHttpClientIdentityModelModule))]
     [DependsOn(typeof(MoInmailHttpApiClientModule))]
     [DependsOn(typeof(MoIdentityHttpApiClientModule))]

@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Com.OPPO.Mo.Extensions
+namespace System.Runtime
 {
     /// <summary>
     /// Type 扩展方法

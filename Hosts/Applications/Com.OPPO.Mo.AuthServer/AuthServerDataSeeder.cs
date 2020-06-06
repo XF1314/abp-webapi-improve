@@ -140,6 +140,13 @@ namespace Com.OPPO.Mo.AuthServer
                 secret: commonSecret,
                 permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default,"MoInmail.InboxMails"}
             );
+            await CreateClientAsync(
+                name: "mo-schedule",
+                scopes: new[] { "MoExternalService", "MoBloggingService", "MoInmailService", "MoWorkflowService", "MoPublicGateway", "MoInternalGateway", "MoIdentityService" },
+                grantTypes: new[] { "client_credentials", "password" },
+                secret: commonSecret,
+                permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default, "MoInmail.InboxMails" }
+            );
 
             await CreateClientAsync(
                 name: "mo-backend-admin-client",

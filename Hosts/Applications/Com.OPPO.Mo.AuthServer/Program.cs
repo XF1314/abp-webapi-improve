@@ -58,10 +58,7 @@ namespace Com.OPPO.Mo.AuthServer
 
         internal static IHostBuilder CreateHostBuilder(string[] args) =>
             Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                })
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
                 .UseAutofac()
                 .UseSerilog();
     }
