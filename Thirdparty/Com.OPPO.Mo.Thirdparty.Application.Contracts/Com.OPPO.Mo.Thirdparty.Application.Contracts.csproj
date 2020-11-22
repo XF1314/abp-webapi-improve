@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace></RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\input\**" />
+	  <Compile Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\outPut\**" />
+	  <Compile Remove="Com\OPPO\Mo\Thirdparty\Hr\PeopleSoft\Users\**" />
+	  <EmbeddedResource Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\input\**" />
+	  <EmbeddedResource Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\outPut\**" />
+	  <EmbeddedResource Remove="Com\OPPO\Mo\Thirdparty\Hr\PeopleSoft\Users\**" />
+	  <None Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\input\**" />
+	  <None Remove="Com\OPPO\Mo\Thirdparty\Erp\Dtos\outPut\**" />
+	  <None Remove="Com\OPPO\Mo\Thirdparty\Hr\PeopleSoft\Users\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Com\OPPO\Mo\Thirdparty\Localization\Resources\en.json" />
+		<None Remove="Com\OPPO\Mo\Thirdparty\Localization\Resources\zh-Hans.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="2.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Com\OPPO\Mo\Thirdparty\Adap\Request\" />
+		<Folder Include="Com\OPPO\Mo\Thirdparty\RealmeOpenApi\Dtos\" />
+		<Folder Include="Com\OPPO\Mo\Thirdparty\RealmeOpenApi\Requests\" />
+		<Folder Include="Com\OPPO\Mo\Thirdparty\RealmeOpenApi\Responses\" />
+		<ProjectReference Include="..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+		<ProjectReference Include="..\..\Framework\Com.OPPO.Mo.WebApiClient\Com.OPPO.Mo.WebApiClient.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.OPPO.Mo.Thirdparty.HttpApi</name>
+    </assembly>
+    <members>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataSearchController.AggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandAggregateSearchInput)">
+            <summary>
+            获取聚合数据
+            </summary>
+            <param name="employeeCode">用户编码</param>
+            <param name="dataGrandAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataSearchController.ArticleAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput)">
+            <summary>
+            发文数据聚合搜索
+            </summary>
+            <param name="employeeCode">用户编码</param>
+            <param name="dataGrandArticleAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataSearchController.MailAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput)">
+            <summary>
+            便签数据聚合搜索
+            </summary>
+            <param name="employeeCode">用户编码</param>
+            <param name="dataGrandMailAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataSearchController.ModuleAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandModuleAggregateSearchInput)">
+            <summary>
+            模块数据聚合搜索
+            </summary>
+            <param name="employeeCode">用户编码</param>
+            <param name="dataGrandModuleAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandModuleAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.GetAllJmsProducts">
+            <summary>
+            获取所有跳板机产品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.GetServiceByProduct(System.String)">
+            <summary>
+            根据跳板机产品获取服务
+            </summary>
+            <param name="product">产品</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.GetModuleByProductAndService(System.String,System.String)">
+            <summary>
+            根据跳板机产品和服务获取模块
+            </summary>
+            <param name="product">产品</param>
+            <param name="service">服务</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.GetHostInfoByIp(System.String)">
+            <summary>
+            根据跳板机ip获取服务器信息
+            </summary>
+            <param name="ip">ip</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.GetJmsBusinessOwnerByUserAndBusinessTree(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            根据用户和业务树获取跳板机业务Owner
+            </summary>
+            <param name="userCode">用户工号</param>
+            <param name="bussinesses">业务s</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.AddPermission(Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput)">
+            <summary>
+            新增跳板机权限
+            </summary>
+            <param name="jmsPermissionAddInput"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.JmsController.CallbackWhenProcessFinished(Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput)">
+            <summary>
+            跳板机流程结束回调
+            </summary>
+            <param name="jmsProcessFinishCallbackInput"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput"/></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

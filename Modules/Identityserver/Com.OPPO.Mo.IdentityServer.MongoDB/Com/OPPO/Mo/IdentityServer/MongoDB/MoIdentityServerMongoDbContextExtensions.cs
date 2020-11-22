@@ -22,7 +22,6 @@ namespace Com.OPPO.Mo.IdentityServer.MongoDB
             );
 
             optionsAction?.Invoke(options);
-
             builder.Entity<ApiResource>(b =>
             {
                 b.CollectionName = options.CollectionPrefix + "ApiResources";

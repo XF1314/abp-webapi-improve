@@ -14,7 +14,7 @@ namespace Com.OPPO.Mo
         /// 提示信息
         /// </summary>
         /// <example>操作成功</example>
-        string Message { get; set; }
+        string Msg { get; set; }
 
         /// <summary>
         /// 是否成功

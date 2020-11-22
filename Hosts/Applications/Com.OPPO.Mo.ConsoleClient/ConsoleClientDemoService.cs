@@ -1,6 +1,5 @@
 ﻿using Com.OPPO.Mo.Identity;
-using Com.OPPO.Mo.Inmail.InboxMail;
-using Com.OPPO.Mo.TenantManagement;
+using Com.OPPO.Mo.MasterData.InboxMail;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -17,18 +16,15 @@ namespace Com.OPPO.Mo.ConsoleClient
     {
         private readonly IIdentityModelAuthenticationService _identityModelAuthenticationService;
         private readonly IIdentityUserAppService _identityUserAppService;
-        private readonly ITenantAppService _tenantAppService;
         private readonly IInboxMailAppService _inboxMailAppService;
         private readonly AbpRemoteServiceOptions _remoteServiceOptions;
 
         public ConsoleClientDemoService(
-            ITenantAppService tenantAppService,
             IInboxMailAppService inboxMailAppService,
             IIdentityUserAppService identityUserAppService,
             IOptions<AbpRemoteServiceOptions> remoteServiceOptions,
             IIdentityModelAuthenticationService identityModelAuthenticationService)
         {
-            _tenantAppService = tenantAppService;
             _inboxMailAppService = inboxMailAppService;
             _identityUserAppService = identityUserAppService;
             _remoteServiceOptions = remoteServiceOptions.Value;
@@ -39,7 +35,6 @@ namespace Com.OPPO.Mo.ConsoleClient
         {
             await TestWithHttpClient();
             await TestIdentityService();
-            await TestTenantManagementService();
             await TestInboxMailService();
         }
 
@@ -95,35 +90,6 @@ namespace Com.OPPO.Mo.ConsoleClient
                 foreach (var user in output.Items)
                 {
                     Console.WriteLine($"- UserName={user.UserName}, Email={user.Email}, Name={user.Name}, Surname={user.Surname}");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
-        /// <summary>
-        /// Shows how to use application service interfaces (ITenantAppService in this sample)
-        /// to call a remote service which is possible by the dynamic http client proxy system.
-        /// No need to use IIdentityModelAuthenticationService since the dynamic http client proxy
-        /// system internally uses it. You just inject a service (ITenantAppService)
-        /// and call a method (GetListAsync) like a local method.
-        /// </summary>
-        private async Task TestTenantManagementService()
-        {
-            Console.WriteLine();
-            Console.WriteLine("*** TestTenantManagementService ************************************");
-
-            try
-            {
-                var output = await _tenantAppService.GetListAsync(new GetTenantsInput());
-
-                Console.WriteLine("Total tenant count: " + output.TotalCount);
-
-                foreach (var tenant in output.Items)
-                {
-                    Console.WriteLine($"- Id={tenant.Id}, Name={tenant.Name}");
                 }
             }
             catch (Exception e)

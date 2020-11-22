@@ -33,8 +33,8 @@ namespace Com.OPPO.Mo.IdentityService
     typeof(AbpAutofacModule),
     typeof(AbpEventBusRabbitMqModule),
     typeof(MoAuditLoggingMongoDbModule),
-    typeof(MoPermissionManagementMongoDbModule),
     typeof(MoSettingManagementMongoDbModule),
+    typeof(MoPermissionManagementMongoDbModule),
     typeof(MoIdentityHttpApiModule),
     typeof(MoIdentityMongoDbModule),
     typeof(MoIdentityApplicationModule),
@@ -155,9 +155,9 @@ namespace Com.OPPO.Mo.IdentityService
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Mo Identity Service API");
                 options.OAuth2RedirectUrl($"{configuration["AppSelfUrl"]}/swagger/oauth2-redirect.html");
                 options.OAuthAppName(configuration["AppName"]);
-                options.OAuthClientId(configuration["IdentityClients:IdentityService:ClientId"]);
-                options.OAuthClientSecret(configuration["IdentityClients:IdentityService:ClientSecret"]);
-                options.OAuthUsePkce();
+                options.OAuthClientId(configuration["IdentityClients:IdentityServiceClient:ClientId"]);
+                options.OAuthClientSecret(configuration["IdentityClients:IdentityServiceClient:ClientSecret"]);
+                options.OAuthUsePkce();                
             });
             app.UseAuditing();
             app.UseMvcWithDefaultRouteAndArea();

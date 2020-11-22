@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="2.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+		<ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.WebApiClient\Com.OPPO.Mo.WebApiClient.csproj" />
+		<ProjectReference Include="..\Com.OPPO.Mo.Bpm.Domain.Shared\Com.OPPO.Mo.Bpm.Domain.Shared.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\BusinessObjects\Responses\" />
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\Extensions\Dtos\" />
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\Extensions\Responses\" />
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\Metadatas\Responses\" />
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\Notifications\Responses\" />
+	  <Folder Include="Com\OPPO\Mo\Bpm\ActionSoft\Organiztion\Responses\" />
+	</ItemGroup>
+</Project>

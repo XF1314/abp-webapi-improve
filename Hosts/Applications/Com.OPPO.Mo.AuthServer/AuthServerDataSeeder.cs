@@ -1,29 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using Com.Ctrip.Framework.Apollo;
+using Com.OPPO.Mo.Account.Settings;
+using Com.OPPO.Mo.Identity;
+using Com.OPPO.Mo.IdentityServer.ApiResources;
+using Com.OPPO.Mo.IdentityServer.Clients;
+using Com.OPPO.Mo.IdentityServer.IdentityResources;
+using Com.OPPO.Mo.PermissionManagement;
+using Com.OPPO.Mo.SettingManagement;
+using IdentityServer4.Models;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.Uow;
-using Volo.Abp.Authorization.Permissions;
-using static IdentityModel.OidcConstants;
-using IdentityServer4.Models;
 using MoApiResources = Com.OPPO.Mo.IdentityServer.ApiResources;
 using MoClients = Com.OPPO.Mo.IdentityServer.Clients;
-using Com.OPPO.Mo.PermissionManagement;
-using Com.OPPO.Mo.Identity;
-using Com.OPPO.Mo.Account.Settings;
-using Com.OPPO.Mo.IdentityServer.ApiResources;
-using Com.OPPO.Mo.IdentityServer.Clients;
-using Com.OPPO.Mo.IdentityServer.IdentityResources;
-using Com.OPPO.Mo.SettingManagement;
-using Com.OPPO.Mo.TenantManagement;
-using Microsoft.AspNetCore.Identity;
 
 namespace Com.OPPO.Mo.AuthServer
 {
     public class AuthServerDataSeeder : IDataSeedContributor, ITransientDependency
     {
+        private readonly IConfiguration _configuration;
         private readonly IApiResourceRepository _apiResourceRepository;
         private readonly IClientRepository _clientRepository;
         private readonly IIdentityResourceDataSeeder _identityResourceDataSeeder;
@@ -32,6 +32,7 @@ namespace Com.OPPO.Mo.AuthServer
         private readonly ISettingRepository _settingRepository;
 
         public AuthServerDataSeeder(
+             IConfiguration configuration,
             IClientRepository clientRepository,
             IApiResourceRepository apiResourceRepository,
             IIdentityResourceDataSeeder identityResourceDataSeeder,
@@ -39,6 +40,7 @@ namespace Com.OPPO.Mo.AuthServer
             ISettingRepository settingRepository,
             IPermissionDataSeeder permissionDataSeeder)
         {
+            _configuration = configuration;
             _clientRepository = clientRepository;
             _apiResourceRepository = apiResourceRepository;
             _identityResourceDataSeeder = identityResourceDataSeeder;
@@ -62,11 +64,7 @@ namespace Com.OPPO.Mo.AuthServer
             if (setting == null)
             {
                 setting = await _settingRepository.InsertAsync(
-                    new Setting(
-                        _guidGenerator.Create(),
-                        AccountSettingNames.EnableLocalLogin,
-                        "true"
-                    ),
+                    new Setting(_guidGenerator.Create(), AccountSettingNames.EnableLocalLogin, "true"),
                     autoSave: true
                 );
             }
@@ -83,14 +81,10 @@ namespace Com.OPPO.Mo.AuthServer
                 "phone_number_verified",
                 "role"
             };
-
-            await CreateApiResourceAsync("MoExternalService", commonApiUserClaims);
-            await CreateApiResourceAsync("MoInmailService", commonApiUserClaims);
-            await CreateApiResourceAsync("MoBloggingService", commonApiUserClaims);
-            await CreateApiResourceAsync("MoWorkflowService", commonApiUserClaims);
-            await CreateApiResourceAsync("MoPublicGateway", commonApiUserClaims);
+            await CreateApiResourceAsync("MoBpmService", commonApiUserClaims);
             await CreateApiResourceAsync("MoInternalGateway", commonApiUserClaims);
-            await CreateApiResourceAsync("MoIdentityService", commonApiUserClaims);
+            await CreateApiResourceAsync("MoMasterDataService", commonApiUserClaims);
+            await CreateApiResourceAsync("MoThirdpartyService", commonApiUserClaims);
         }
 
         private async Task<MoApiResources.ApiResource> CreateApiResourceAsync(string name, IEnumerable<string> claims)
@@ -107,13 +101,10 @@ namespace Com.OPPO.Mo.AuthServer
                     autoSave: true
                 );
             }
-
             foreach (var claim in claims)
             {
                 if (apiResource.FindClaim(claim) == null)
-                {
                     apiResource.AddUserClaim(claim);
-                }
             }
 
             return await _apiResourceRepository.UpdateAsync(apiResource);
@@ -121,7 +112,6 @@ namespace Com.OPPO.Mo.AuthServer
 
         private async Task CreateClientsAsync()
         {
-            //const string commonSecret = "E5Xd4yMqjP5kjWFKrYgySBju6JVfCzMyFp7n2QmMrME=";
             var commonSecret = "1q2w3E*".Sha256();
             var commonScopes = new[]
             {
@@ -134,63 +124,116 @@ namespace Com.OPPO.Mo.AuthServer
             };
 
             await CreateClientAsync(
-                name: "mo-console-client",
-                scopes: new[] { "MoExternalService", "MoBloggingService", "MoInmailService", "MoWorkflowService", "MoPublicGateway", "MoInternalGateway", "MoIdentityService" },
-                grantTypes: new[] { "client_credentials", "password" },
+                name: "mo-console",
+                scopes: new[] { "MoMasterDataService", "MoInternalGateway" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },// "password"
                 secret: commonSecret,
-                permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default,"MoInmail.InboxMails"}
+                permissions: new[] { IdentityPermissions.Users.Default, "MoMasterData.Inmail.InboxMails" }
             );
             await CreateClientAsync(
-                name: "mo-schedule",
-                scopes: new[] { "MoExternalService", "MoBloggingService", "MoInmailService", "MoWorkflowService", "MoPublicGateway", "MoInternalGateway", "MoIdentityService" },
-                grantTypes: new[] { "client_credentials", "password" },
+                name: "mo-schedule-service",
+                scopes: new[] { "MoMasterDataService", "MoInternalGateway" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },
                 secret: commonSecret,
-                permissions: new[] { IdentityPermissions.Users.Default, TenantManagementPermissions.Tenants.Default, "MoInmail.InboxMails" }
+                permissions: new[] { IdentityPermissions.Users.Default, "MoMasterData.Inmail.InboxMails" }
             );
-
             await CreateClientAsync(
-                name: "mo-backend-admin-client",
-                scopes: commonScopes.Union(new[] { "MoInternalGateway", "MoIdentityService", "MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService", "offline_access" }),
-                grantTypes: new[] { "hybrid" },//implict
+                name: "mo-backend-admin",
+                scopes: commonScopes.Union(new[] { "MoInternalGateway", "MoThirdpartyService", "MoBpmService", "offline_access" }),
+                grantTypes: new[] { "hybrid"/*IdentityModel.OidcConstants.GrantTypes.AuthorizationCode*/ },//hybrid
                 secret: commonSecret,
-                //requireConsent: true,
-                //requirePkce: true,
-                permissions: new[] { IdentityPermissions.Users.Default},
-                allowedCorsOrigins:new[] { "http://localhost:51462" },
-                redirectUris: new List<string> { "http://localhost:51462/signin-oidc", "http://localhost:51462/swagger/oauth2-redirect.html" },
+                requireConsent: false,
+                requirePkce: false,
+                permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default },
+                allowedCorsOrigins: new[] { "http://localhost:51462", "http://172.16.44.115:6108", "http://172.16.46.115:6108" },
+                redirectUris: new List<string> {
+                    "http://localhost:51462/signin-oidc",
+                    "http://localhost:51462/swagger/oauth2-redirect.html",
+                    "http://172.16.44.115:6108/signin-oidc",
+                    "http://172.16.44.115:6108/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6108/signin-oidc",
+                    "http://172.16.46.115:6108/swagger/oauth2-redirect.html"},
                 postLogoutRedirectUri: "http://localhost:51462/signout-callback-oidc"
             );
             await CreateClientAsync(
-                 name: "mo-identity-service-client",
-                scopes: new[] { "MoInternalGateway", "MoIdentityService", "offline_access" },
-                grantTypes: new[] { "authorization_code"},
+                name: "mo-bpm-service",
+                scopes: new[] { "MoBpmService" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },
                 secret: commonSecret,
-                requireConsent: true,
-                requirePkce: true,
-                allowedCorsOrigins: new List<string> { "http://localhost:60549" },
-                redirectUris: new List<string> { "http://localhost:60549/swagger/oauth2-redirect.html", "http://localhost:60549/signin-oidc" },
+                allowedCorsOrigins: new[] { "http://localhost:54579", "http://172.16.44.115:6104", "http://172.16.46.115:6104","http://172.16.40.194:6104", "http://172.16.40.195:6104" },
+                redirectUris: new List<string> {
+                    "http://172.16.44.115:6104/signin-oidc",
+                    "http://172.16.44.115:6104/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6104/signin-oidc",
+                    "http://172.16.46.115:6104/swagger/oauth2-redirect.html",
+                    "http://localhost:54579/signin-oidc",
+                    "http://localhost:54579/swagger/oauth2-redirect.html" ,
+                    "http://172.16.40.194:6104/signin-oidc",
+                    "http://172.16.40.194:6104/swagger/oauth2-redirect.html",
+                    "http://172.16.40.195:6104/signin-oidc",
+                    "http://172.16.40.195:6104/swagger/oauth2-redirect.html",},
+                permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
+                );
+            await CreateClientAsync(
+                name: "mo-masterdata-service",
+                scopes: new[] { "MoMasterDataService" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },//IdentityModel.OidcConstants.GrantTypes.AuthorizationCode
+                secret: commonSecret,
+                allowedCorsOrigins: new List<string> { "http://localhost:54541", "http://172.16.44.115:6102", "http://172.16.46.115:6102" },
+                redirectUris: new List<string> {
+                    "http://172.16.44.115:6102/swagger/oauth2-redirect.html",
+                    "http://172.16.44.115:6102/signin-oidc",
+                    "http://172.16.46.115:6102/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6102/signin-oidc",
+                    "http://localhost:54541/swagger/oauth2-redirect.html",
+                    "http://localhost:54541/signin-oidc" },
+                permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default, "MoMasterData.Inmail.InboxMails" }
+            );
+            await CreateClientAsync(
+                name: "mo-thirdparty-service",
+                scopes: new[] { "MoThirdpartyService" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },
+                secret: commonSecret,
+                allowedCorsOrigins: new List<string> { "http://localhost:54668", "http://172.16.44.115:6106", "http://172.16.46.115:6106", "http://172.16.40.194:6106", "http://172.16.40.195:6106" },
+                redirectUris: new List<string> {
+                    "http://172.16.44.115:6106/swagger/oauth2-redirect.html",
+                    "http://172.16.44.115:6106/signin-oidc",
+                    "http://172.16.46.115:6106/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6106/signin-oidc",
+                    "http://localhost:54668/swagger/oauth2-redirect.html",
+                    "http://localhost:54668/signin-oidc",
+                    "http://172.16.40.194:6106/signin-oidc",
+                    "http://172.16.40.194:6106/swagger/oauth2-redirect.html",
+                    "http://172.16.40.195:6106/signin-oidc",
+                    "http://172.16.40.195:6106/swagger/oauth2-redirect.html",                },
                 permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
             );
             await CreateClientAsync(
-                 name: "mo-inmail-service-client",
-                scopes: new[] { "MoInmailService", "offline_access" },
-                grantTypes: new[] { "authorization_code" },
+                name: "mo-gateway-internal",
+                scopes: new[] { "MoInternalGateway", "MoMasterDataService", "MoThirdpartyService", "MoBpmService" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },//implicit
                 secret: commonSecret,
-                requireConsent: true,
-                requirePkce: true,
-                allowedCorsOrigins: new List<string> { "http://localhost:54541" },
-                redirectUris: new List<string> { "http://localhost:54541/swagger/oauth2-redirect.html", "http://localhost:54541/signin-oidc" },
+                allowedCorsOrigins: new List<string> { "http://localhost:54415", "http://172.16.44.115:6110", "http://172.16.46.115:6110", "http://172.16.40.193:6110" , "http://172.16.40.195:6110" },
+                redirectUris: new List<string> {
+                    "http://localhost:54415/swagger/oauth2-redirect.html",
+                    "http://172.16.44.115:6110/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6110/swagger/oauth2-redirect.html",
+                    "http://172.16.40.193:6110/swagger/oauth2-redirect.html",
+                    "http://172.16.40.195:6110/swagger/oauth2-redirect.html"
+                },
                 permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
             );
             await CreateClientAsync(
-                 name: "mo-gateway-internal",
-                scopes: new[] { "MoInternalGateway","MoBloggingService", "MoExternalService", "MoInmailService", "MoWorkflowService", "MoIdentityService", "offline_access" },
-                grantTypes: new[] { "authorization_code" },//implicit
+                name: "oppo-upm",
+                scopes: new[] { "MoBpmService" },
+                grantTypes: new[] { IdentityModel.OidcConstants.GrantTypes.ClientCredentials },//implicit
                 secret: commonSecret,
-                requireConsent: true,
-                requirePkce: true,
-                allowedCorsOrigins: new List<string> { "http://localhost:54415" },
-                redirectUris: new List<string> { "http://localhost:54415/swagger/oauth2-redirect.html" },
+                allowedCorsOrigins: new List<string> { "http://localhost:54415", "http://172.16.44.115:6110", "http://172.16.46.115:6110" },
+                redirectUris: new List<string> {
+                    "http://localhost:54415/swagger/oauth2-redirect.html",
+                    "http://172.16.44.115:6110/swagger/oauth2-redirect.html",
+                    "http://172.16.46.115:6110/swagger/oauth2-redirect.html"
+                },
                 permissions: new[] { IdentityPermissions.UserLookup.Default, IdentityPermissions.Users.Default }
             );
         }
@@ -211,10 +254,7 @@ namespace Com.OPPO.Mo.AuthServer
             if (client == null)
             {
                 client = await _clientRepository.InsertAsync(
-                    new MoClients.Client(
-                        _guidGenerator.Create(),
-                        name
-                    )
+                    new MoClients.Client(_guidGenerator.Create(), name)
                     {
                         ClientName = name,
                         Description = name,
@@ -223,10 +263,10 @@ namespace Com.OPPO.Mo.AuthServer
                         AllowAccessTokensViaBrowser = true,
                         AlwaysIncludeUserClaimsInIdToken = true,
                         AllowOfflineAccess = true,
-                        IdentityTokenLifetime = 300,
-                        AuthorizationCodeLifetime = 300,
-                        AccessTokenLifetime = 31536000, //365 days
-                        AbsoluteRefreshTokenLifetime = 31536000 //365 days
+                        IdentityTokenLifetime = 300,//5 minutes
+                        AuthorizationCodeLifetime = 300,//5 minutes
+                        AccessTokenLifetime = 7200, //2 hours
+                        AbsoluteRefreshTokenLifetime = 604800 //7 days
                     },
                     autoSave: true
                 );

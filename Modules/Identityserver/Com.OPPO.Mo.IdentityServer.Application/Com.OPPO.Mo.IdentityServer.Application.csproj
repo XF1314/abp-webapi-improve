@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <RootNamespace></RootNamespace>
+  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Com.OPPO.Mo.IdentityServer.Application.Contracts\Com.OPPO.Mo.IdentityServer.Application.Contracts.csproj" />
+		<ProjectReference Include="..\Com.OPPO.Mo.IdentityServer.Domain\Com.OPPO.Mo.IdentityServer.Domain.csproj" />
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Com\OPPO\Mo\IdentityServer\" />
+	</ItemGroup>
+</Project>

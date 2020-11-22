@@ -2,8 +2,8 @@
 {
     public class AccountSettingNames
     {
-        public const string IsSelfRegistrationEnabled = "Abp.Account.IsSelfRegistrationEnabled";
+        public const string IsSelfRegistrationEnabled = "Mo.Account.IsSelfRegistrationEnabled";
 
-        public const string EnableLocalLogin = "Abp.Account.EnableLocalLogin";
+        public const string EnableLocalLogin = "Mo.Account.EnableLocalLogin";
     }
 }

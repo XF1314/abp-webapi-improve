@@ -8,7 +8,7 @@ using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Com.OPPO.Mo.Extensions
+namespace System.Runtime
 {
     /// <summary>
     /// 枚举扩展方法

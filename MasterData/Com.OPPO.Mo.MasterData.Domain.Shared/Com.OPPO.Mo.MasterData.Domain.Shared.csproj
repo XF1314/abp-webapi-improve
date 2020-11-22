@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Com\OPPO\Mo\MasterData\Localization\Resources\cs.json" />
+    <None Remove="Com\OPPO\Mo\MasterData\Localization\Resources\en.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Com\OPPO\Mo\MasterData\Localization\Resources\cs.json" />
+    <EmbeddedResource Include="Com\OPPO\Mo\MasterData\Localization\Resources\en.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Validation" Version="2.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+  </ItemGroup>
+</Project>

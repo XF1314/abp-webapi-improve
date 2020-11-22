@@ -17,7 +17,6 @@ namespace Com.OPPO.Mo.Identity.MongoDB
             );
 
             optionsAction?.Invoke(options);
-
             builder.Entity<IdentityUser>(b =>
             {
                 b.CollectionName = options.CollectionPrefix + "Users";

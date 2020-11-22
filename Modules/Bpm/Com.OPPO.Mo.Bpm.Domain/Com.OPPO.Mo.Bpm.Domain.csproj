@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace></RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.5.0" />
+		<PackageReference Include="Volo.Abp.EventBus" Version="2.5.0" />
+		<PackageReference Include="DotNetCore.CAP" Version="3.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Framework\Com.OPPO.Mo.Core\Com.OPPO.Mo.Core.csproj" />
+		<ProjectReference Include="..\Com.OPPO.Mo.Bpm.Domain.Shared\Com.OPPO.Mo.Bpm.Domain.Shared.csproj" />
+	</ItemGroup>
+</Project>

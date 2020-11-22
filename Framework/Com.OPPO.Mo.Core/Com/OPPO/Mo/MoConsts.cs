@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Com.OPPO.Mo
 {
-    public class MoConsts
+    public class MoBpmConsts
     {
         /// <summary>
         /// 系统编码
@@ -14,7 +14,7 @@ namespace Com.OPPO.Mo
         /// <summary>
         /// 基础响应码
         /// </summary>
-        public const int BaseResultCode = 1000;
+        public const int BaseResultCode = 0;
 
         /// <summary>
         /// 是否允许多租户

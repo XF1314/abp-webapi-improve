@@ -17,7 +17,6 @@
     <ProjectReference Include="..\..\Users\Com.OPPO.Mo.Users.Abstractions\Com.OPPO.Mo.Users.Abstractions.csproj" />
     <PackageReference Include="Volo.Abp.Authorization" Version="2.5.0" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="2.5.0" />
-    <!--<PackageReference Include="Com.OPPO.Mo.Identity.Domain.Shared" Version="2.5.0" />-->
   </ItemGroup>
 
 </Project>

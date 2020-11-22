@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <RootNamespace></RootNamespace>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="MySql.Data" Version="8.0.21" />
+		<PackageReference Include="Volo.Abp.Caching" Version="2.5.0" />
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="2.5.0" />
+		<PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.Thirdparty.Application.Contracts\Com.OPPO.Mo.Thirdparty.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Com\OPPO\Mo\Thirdparty\Hr\PeopleSoft\Users\" />
+    <Folder Include="Com\OPPO\Mo\Thirdparty\Finance\" />
+  </ItemGroup>
+
+</Project>

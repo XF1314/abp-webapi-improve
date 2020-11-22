@@ -19,9 +19,6 @@ using Volo.Abp.MultiTenancy;
 using Volo.Abp.UI.Navigation;
 using Com.OPPO.Mo.Identity;
 using Com.OPPO.Mo.Identity.Web;
-using Com.OPPO.Mo.TenantManagement;
-using Com.OPPO.Mo.TenantManagement.Web;
-using Com.OPPO.Mo.Blogging;
 using Com.OPPO.Mo.PermissionManagement;
 using Com.OPPO.Mo.FeatureManagement;
 using Volo.Abp.Data;
@@ -30,7 +27,6 @@ using Com.OPPO.Mo.SettingManagement.MongoDB;
 using Com.OPPO.Mo.SettingManagement.Web;
 using Com.OPPO.Mo.PermissionManagement.Web;
 using Com.OPPO.Mo.AuditLogging.MongoDB;
-using Volo.Abp.AspNetCore.Serilog;
 using Com.OPPO.Mo.BackgroundJobs.MongoDB;
 using Volo.Abp.MongoDB;
 using Volo.Abp.Security.Claims;
@@ -40,23 +36,17 @@ namespace Com.OPPO.Mo.BackendAdmin
 {
     [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpAspNetCoreMvcClientModule),
     typeof(AbpAspNetCoreMvcUiBasicThemeModule),
     typeof(AbpHttpClientIdentityModelWebModule),
     typeof(AbpAspNetCoreAuthenticationOAuthModule),
 
+    typeof(MoCoreModule),
     typeof(MoBackgroundJobsMongoDbModule),
     typeof(MoAuditLoggingMongoDbModule),
 
     typeof(MoIdentityHttpApiClientModule),
     typeof(MoIdentityWebModule),
-
-    typeof(MoTenantManagementHttpApiClientModule),
-    typeof(MoTenantManagementWebModule),
-
-    typeof(MoBloggingHttpApiClientModule),
-    typeof(MoBloggingWebModule),
 
     typeof(MoPermissionManagementHttpApiClientModule),
     typeof(MoPermissionManagementWebModule),
@@ -72,34 +62,17 @@ namespace Com.OPPO.Mo.BackendAdmin
         {
             AbpCommonDbProperties.DbTablePrefix = MoConsts.ProjectCode;
             var configuration = context.Services.GetConfiguration();
-            Configure<AppUrlOptions>(options =>
-            {
-                options.Applications["MVC"].RootUrl = configuration["AppSelfUrl"];
-            });
-            Configure<AbpLocalizationOptions>(options =>
-            {
-                options.Languages.Add(new LanguageInfo("en", "en", "English"));
-            });
-
-            Configure<AbpMultiTenancyOptions>(options =>
-            {
-                options.IsEnabled = MoConsts.IsMultiTenancyEnabled;
-            });
-
-            Configure<AbpNavigationOptions>(options =>
-            {
-                options.MenuContributors.Add(new BackendAdminAppMenuContributor(configuration));
-            });
+            Configure<AppUrlOptions>(options => options.Applications["MVC"].RootUrl = configuration["AppSelfUrl"]);
+            Configure<AbpLocalizationOptions>(options => options.Languages.Add(new LanguageInfo("en", "en", "English")));
+            Configure<AbpMultiTenancyOptions>(options => options.IsEnabled = MoConsts.IsMultiTenancyEnabled);
+            Configure<AbpNavigationOptions>(options => options.MenuContributors.Add(new BackendAdminAppMenuContributor(configuration)));
 
             context.Services.AddAuthentication(options =>
                 {
                     options.DefaultScheme = "Cookies";
                     options.DefaultChallengeScheme = "oidc";
                 })
-                .AddCookie("Cookies", options =>
-                {
-                    options.ExpireTimeSpan = TimeSpan.FromDays(365);
-                })
+                .AddCookie("Cookies", options => options.ExpireTimeSpan = TimeSpan.FromDays(365))
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.Authority = configuration["AuthServer:Authority"];
@@ -112,31 +85,21 @@ namespace Com.OPPO.Mo.BackendAdmin
                     options.Scope.Add("role");
                     options.Scope.Add("email");
                     options.Scope.Add("phone");
-                    options.Scope.Add("offline_access");
                     options.Scope.Add("MoInternalGateway");
-                    options.Scope.Add("MoExternalService");
-                    options.Scope.Add("MoIdentityService");
-                    options.Scope.Add("MoInmailService");
-                    options.Scope.Add("MoWorkflowService");
-                    options.Scope.Add("MoBloggingService");
+                    options.Scope.Add("MoThirdpartyService");
+                    options.Scope.Add("MoBpmService");
+                    options.Scope.Add("offline_access");
                     options.ClaimActions.MapAbpClaimTypes();
                 });
 
-            Configure<AbpMongoModelBuilderConfigurationOptions>(options =>
-            {
-                options.CollectionPrefix = MoConsts.ProjectCode;
-            });
+            Configure<AbpMongoModelBuilderConfigurationOptions>(options => options.CollectionPrefix = MoConsts.ProjectCode);
             context.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend Admin Application API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
             });
 
-            context.Services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = configuration["Redis:Configuration"];
-            });
-
+            context.Services.AddStackExchangeRedisCache(options => options.Configuration = configuration["Redis:Configuration"]);
             var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
             context.Services.AddDataProtection()
                 .PersistKeysToStackExchangeRedis(redis, "Mo-DataProtection-Keys-BackendAdmin");
@@ -151,9 +114,7 @@ namespace Com.OPPO.Mo.BackendAdmin
             app.UseRouting();
             app.UseAuthentication();
             if (MoConsts.IsMultiTenancyEnabled)
-            {
                 app.UseMultiTenancy();
-            }
             app.UseAuthorization();
             app.UseAbpRequestLocalization();
             app.UseSwagger();

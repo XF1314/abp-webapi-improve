@@ -1,0 +1,4372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.OPPO.Mo.Thirdparty.Application.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType">
+            <summary>
+            发文用户类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType.Drafter">
+            <summary>
+            拟制人
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType.Alter">
+            <summary>
+            流程修改人
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType.Process">
+            <summary>
+            流程审批人
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType.Current">
+            <summary>
+            当前审批人
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.ArticleUserType.Reader">
+            <summary>
+            读者
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.UserOrGroupType">
+            <summary>
+            用户或群组类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.UserOrGroupType.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.UserOrGroupType.Org">
+            <summary>
+            组织
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.UserOrGroupType.SystemGroup">
+            <summary>
+            系统群组
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.UserOrGroupType.PersonGroup">
+            <summary>
+            个人群组
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1">
+            <summary>
+            达观搜索数据操作
+            </summary>
+            <typeparam name="TDataGrandDataInputItem"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem"/></typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType,`0)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/>
+            </summary>
+            <param name="dataGrandDataOperationType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType"/></param>
+            <param name="operationInputItem"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem"/></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1.OperationType" -->
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1.OperationInputItem">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType">
+            <summary>
+            达观搜索数据操作类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType.add">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType.update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType.delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparision">
+            <summary>
+            达观搜索时间比较
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparision.DateTimeFieldName">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparision.comparisonOperator">
+            <summary>
+            比较符
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparision.DateTime">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparision.DateTimeStamp">
+            <summary>
+            时间戳(秒)
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparisonOperator">
+            <summary>
+            达观搜索时间比较符
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparisonOperator.GreaterOrEqual">
+            <summary>
+            大于或等于
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDatetimeComparisonOperator.LessOrEqual">
+            <summary>
+            小于或等于
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandParamsSignatureFilter">
+            <summary>
+            达观搜索签名Filter
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandParamsSignatureFilter.#ctor(System.Lazy{Microsoft.Extensions.Configuration.IConfiguration},System.Lazy{Microsoft.Extensions.Logging.ILoggerFactory})">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandParamsSignatureFilter"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandParamsSignatureFilter.OrderIndex">
+            <inheritdoc/>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandParamsSignatureFilter.OnBeginRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>准备请求之前</summary>
+            <param name="apiActionContext"><see cref="T:WebApiClient.Contexts.ApiActionContext"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperation`1">
+            <summary>
+            达观搜索权限操作
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperation`1.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType,`0)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperation`1"/>
+            </summary>
+            <param name="dataGrandPermissionOperationType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperation`1.OperationType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperation`1.PermissionInputItem">
+            <summary>
+            【必填项】<see cref="!:TDataGrandPermissionInputItem"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType">
+            <summary>
+            达观搜索权限操作类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType.add">
+            <summary>
+            新增或更新
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionOperationType.delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSearchScope">
+            <summary>
+            达观搜索范围
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSearchScope.All">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSearchScope.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSearchScope.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperation`1">
+            <summary>
+            达观搜索提示词操作
+            </summary>
+            <typeparam name="TDataGrandSuggestOperationInputItem"></typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperation`1.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType,`0)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperation`1"/>
+            </summary>
+            <param name="dataGrandSuggestionOperationType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType"/></param>
+            <param name="operationInputItem"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType"/></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperation`1.OperationType" -->
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperation`1.OperationInputItem">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType">
+            <summary>
+            达观搜索提示词操作类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.add">
+            <summary>
+            新增提示词
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.delete">
+            <summary>
+            删除提示词
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_all">
+            <summary>
+            删除所有提示词
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_private">
+            <summary>
+            删除所有用户私有的提示词
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_public">
+            <summary>
+            删除所有公共的提示词
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionPermissionType">
+            <summary>
+            达观搜索提示词类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionPermissionType.public">
+            <summary>
+            公有
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionPermissionType.private">
+            <summary>
+            私有
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource">
+            <summary>
+            达观搜索推送的提示词类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource.System">
+            <summary>
+            系统定义
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource.ProcessModule">
+            <summary>
+            流程模块
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource.FunctionModule">
+            <summary>
+            功能模块
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource.ExtensionModule">
+            <summary>
+            扩展模块
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource.Custom">
+            <summary>
+            用户习惯
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo">
+            <summary>
+            发文信息
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.Uri">
+            <summary>
+            统一资源定位符(相对)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.PlaceHolderImageUri">
+            <summary>
+            占位图片Uri
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.FormInstanceCode">
+            <summary>
+            发文Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.ProcessSetId">
+            <summary>
+            流程模板Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.ProcessName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.Keywords">
+            <summary>
+            【必填项】控件名称拼接产生，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.FormStatus">
+            <summary>
+            发文状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.FormTitle">
+            <summary>
+            发文标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.FormContent">
+            <summary>
+            发文内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.AttachmentUrls">
+            <summary>
+            附件Urls
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.AttachmentNames">
+            <summary>
+            附件名称s,如有多个，请用\3分隔，并保持与attachments的顺序一致
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.CreatorUserCodes">
+            <summary>
+            拟制人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.CreatorUserNames">
+            <summary>
+            拟制人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.CreatorDepartmentName">
+            <summary>
+            拟制部门名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.CreationTime">
+            <summary>
+            拟制时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.AuditorUserCodes">
+            <summary>
+            审批人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.AuditorNames">
+            <summary>
+            审批人姓名s，如有多个，请用\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.AuditActivityName">
+            <summary>
+            当前审批节点名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.LastAuditorUserName">
+            <summary>
+            最后审批人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.ProcessFeildMapping">
+            <summary>
+            处理字段映射
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleInfo.FeildMappings">
+            <summary>
+            MO与达观搜索的字段映射
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource">
+            <summary>
+            发文来源
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource.All">
+            <summary>
+             全部
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource.MyDrafting">
+            <summary>
+             我的起草
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource.MyApproval">
+            <summary>
+             我的审批
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource.MyReading">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ArticleSource.MyApproved">
+            <summary>
+             我已审批
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.LanguageType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.SearchScope">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSearchScope"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.Keyword">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.Offset">
+            <summary>
+            分页返回结果的开始项，默认为0。注意offset不是起始页数，而是当前页的起始条数。比如每页返回条数count=10, 则第1页的offset=0, 第2页的offset=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.BaseDataGrandAggregateSearchInput.Count">
+            <summary>
+            每页返回的结果条数，默认为20，最大为50，例如当offset为10，count为20时，返回搜索结果的第10-30条结果。
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandAggregateSearchInput.DateTimeFrom" -->
+        <!-- Badly formed XML comment ignored for member "P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandAggregateSearchInput.DateTimeTo" -->
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.DrafterDepartmentName">
+            <summary>
+            拟制人部门名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.DrafterName">
+            <summary>
+            拟制人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.DrafterUserCode">
+            <summary>
+            拟制人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.AuditorName">
+            <summary>
+            审批人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.AuditorUserCode">
+            <summary>
+            审批人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.FormStatus">
+            <summary>
+            <see cref="!:FormInstanceStatus"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.ArticleCode">
+            <summary>
+            发文编号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.ProcessSettingId">
+            <summary>
+            流程模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.DraftTimeFrom">
+            <summary>
+            拟制时间(From)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.DraftTimeTo">
+            <summary>
+            拟制时间(To)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.PublicTimeFrom">
+            <summary>
+            公布时间(From)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput.PublicTimeTo">
+            <summary>
+            公布时间(To)
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandHighlightOutputItem">
+            <summary>
+            达观搜索高亮OutputItem
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandHighlightOutputItem.TargetFieldName">
+            <summary>
+            目标字段名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandHighlightOutputItem.Position">
+            <summary>
+            开始位置
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandHighlightOutputItem.Length">
+            <summary>
+            高亮长度
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.MailSource">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.SenderName">
+            <summary>
+            发送人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.SenderUserCode">
+            <summary>
+            发送人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.ReceiverName">
+            <summary>
+            收件人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.ReceiverUserCode">
+            <summary>
+            收件人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.SendTimeFrom">
+            <summary>
+            发送时间(From)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput.SendTimeTo">
+            <summary>
+            发送时间(To)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandModuleAggregateSearchInput.ModuleType">
+            <summary>
+            模块类型
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput">
+            <summary>
+            达观搜索Output
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.TotalItemCount">
+            <summary>
+            数据项总数
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.SortedItems">
+            <summary>
+            有序的数据Items
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.ModuleItems">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>模块信息s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.ArticleItems">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>发文数据项s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandSearchOutput.MailItems">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>便签数据项s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo">
+            <summary>
+            便签信息
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Uri">
+            <summary>
+            统一资源定位符(相对)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.PlaceHolderImageUri">
+            <summary>
+            占位图片Uri
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.MailCode">
+            <summary>
+            邮件编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Title">
+            <summary>
+            邮件标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Content">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.MailSource">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Owner">
+            <summary>
+            拥有者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Sender">
+            <summary>
+            发送者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.SenderName">
+            <summary>
+            发送者姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Receivers">
+            <summary>
+            所有接收者s（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.ReceiverNames">
+            <summary>
+            所有接收者姓名以,拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.AttachmentUrls">
+            <summary>
+            附件地址s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.AttachmentNames">
+            <summary>
+            附件名称s,以\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.CreationTime">
+            <summary>
+            便签创建时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.SendTime">
+            <summary>
+            便签发送时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.ProcessFeildMapping">
+            <summary>
+            处理字段映射
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.MailInfo.FeildMappings">
+            <summary>
+            MO与达观搜索的字段映射
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo">
+            <summary>
+            模块(功能/流程)信息
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.Crumbs">
+            <summary>
+            面包屑，譬如：营销管理—营销管理支持—营销系统软件开发申请
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.NavigationUrl">
+            <summary>
+            导航地址(相对)
+            对于<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.process"/>来说，对应其列表页
+            对于<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.function"/>来说，同<see cref="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.AccessUrl"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.AccessUrl">
+            <summary>
+            访问地址(相对)
+            对于<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.process"/>来说，对应其拟制页
+            对于<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.function"/>来说，同<see cref="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.NavigationUrl"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.PlaceHolderImageUri">
+            <summary>
+            占位图片Uri
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.ModuleType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.ModuleId">
+            <summary>
+            模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.ModuleName">
+            <summary>
+            功能或流程模块名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.Description">
+            <summary>
+            模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.Keywords">
+            <summary>
+            流程/功能控件参数名拼接，以,分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.ProcessFeildMapping">
+            <summary>
+            处理字段映射
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.ModuleInfo.FeildMappings">
+            <summary>
+            MO与达观搜索的字段映射
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType">
+            <summary>
+            MO上报到达观搜索的用户行为类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType.search">
+            <summary>
+            搜索
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType.search_click">
+            <summary>
+            搜索点击
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType.sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory">
+            <summary>
+            Mo上报到达观搜索的数据种类
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory.all">
+            <summary>
+             全部
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory.module">
+            <summary>
+             模块（流程/功能）
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory.mail">
+            <summary>
+            便签
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory.form">
+            <summary>
+            发文
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType">
+            <summary>
+            MO上报到达观搜索的语言类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType.Default">
+            <summary>
+            缺省
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType.Chinese">
+            <summary>
+            中文
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType.English">
+            <summary>
+            英文
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType">
+            <summary>
+            Mo上报到达观搜索的模块类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.all">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.process">
+            <summary>
+            流程
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.function">
+            <summary>
+            功能
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType.extension">
+            <summary>
+            扩展
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandPemissionType">
+            <summary>
+            MO上报到达观搜索的权限类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandPemissionType.All">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandPemissionType.UserCode">
+            <summary>
+            用户编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandPemissionType.OrgnizaionCode">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandPemissionType.Role">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter">
+            <summary>
+            将<see cref="T:System.Collections.Generic.IList`1"/>以分隔符\3进行拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter.CanRead">
+            <summary>
+            是否开启自定义反序列化，
+            值为true时，反序列化时会走ReadJson方法，值为false时，不走ReadJson方法，而是默认的反序列化
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter.CanWrite">
+            <summary>
+            是否开启自定义序列化，
+            值为true时，序列化时会走WriteJson方法，值为false时，不走WriteJson方法，而是默认的序列化
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandStringListConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem">
+            <summary>
+            基础达观搜索数据InputItem
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.ITEM_ID">
+            <summary>
+            数据项Id
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.DATA_CATEGORY_ID">
+            <summary>
+            数据类型Id
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.LAST_MODIFY_TIME">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.TITLE">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.CONTENT">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem"/>
+            </summary>
+            <param name="dataCategory"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.ItemId">
+            <summary>
+            【必填项】数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.DataCategory">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest">
+            <summary>
+            基础达观搜索数据请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest.AppId">
+            <summary>
+            【必填项】应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest.Sign">
+            <summary>
+            【必填项】参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandDataRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem">
+            <summary>
+            基础达观搜索提示词InputItem
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem.ITEM_ID">
+            <summary>
+            数据项Id
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem.ItemId">
+            <summary>
+            【必填项】数据记录Id
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest">
+            <summary>
+            基础达能搜索提示词Request
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest.AppId">
+            <summary>
+            【必填项】应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest.Sign">
+            <summary>
+            【必填项】参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandSuggestionRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem">
+            <summary>
+            基础达观搜索用户行为InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.#ctor(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory,Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType,System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem"/>
+            </summary>
+            <param name="userCode"></param>
+            <param name="dataCategory"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/></param>
+            <param name="behaviorType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType"/></param>
+            <param name="itemId">搜索行为固定传2，点击行为传点击对象的itemid</param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            【通用字段】MO包括 "all", "form", "mail", "module"
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.BehaviorType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandBehaviorType"/>
+            【通用字段】用户行为，包括 "search", "search_click", "sort", 后续可拓展至其他行为
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.DateTime">
+            <summary>
+            【通用字段】行为发生的时间，使用linux时间戳。未传递时使用当前系统时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.UserCode">
+            <summary>
+            【通用字段】用户工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.DepartmentName">
+            <summary>
+            【通用字段】用户所属部门名称，如“营销部”
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.DepartmentCode">
+            <summary>
+            【通用字段】用户所属组织代码，如“320013”
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.JobTilte">
+            <summary>
+            【通用字段】用户职务名称，如“终端管理员”
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.ItemId">
+            <summary>
+            【通用字段】搜索行为固定传2，点击行为传点击对象的itemid
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.JobLevel">
+            <summary>
+            通用字段】用户职务等级，如“12级”
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem.OtherInformation">
+            <summary>
+            【附加字段】
+            当为搜索时，可以通过该参数传递过滤条件：{ "filter": "author=张三" }；
+            当为点击时，可以通过该参数传递点击条目类型：{ "itemtype": "form" }
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest">
+            <summary>
+            达观搜索聚合搜索请求参数
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType)">
+            <summary>
+            DataGrandAggregateQueryRequest
+            </summary>
+            <param name="languageType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.LanguageType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.DataCategory">
+            <summary>
+            【必填项】 业务系统中数据场景<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.UserCode">
+            <summary>
+            【必填项】用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.ExactFilterItems">
+            <summary>
+            多字段精确匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.FuzzyFilterItems">
+            <summary>
+            多字段模糊匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Filter">
+            <summary>
+            多字段精确匹配查询，filter=status:1+stage_statue:2，
+            查询发文状态为1，环节状态为2的发文，详见通用接口描述中关于filter的用法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Fuzzy">
+            <summary>
+            多字段模糊匹配，fuzzy=title:请假+content:请假天数，查询title中包含“请假”及content中包含“请假天数”的发文
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.DatetimeFilterItems">
+            <summary>
+            时间过滤查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Range">
+            <summary>
+            区间筛选，如range=publish_time>=1561778412，查询发文时间大于“1561778412”的发文
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Keyword">
+            <summary>
+            【必填项】搜索查询词，utf-8 编码,允许在某些情况下留空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.DateTimeFrom">
+            <summary>
+            时间(From)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.DateTimeTo">
+            <summary>
+             时间(To)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Position">
+            <summary>
+            分页返回结果的开始项，默认为0。
+            注意Position不是起始页数，而是当前页的起始条数。
+            比如每页返回条数cnt=10, 则第1页的pos=0, 第2页的pos=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest.Count">
+            <summary>
+            每页返回的结果条数，默认为20，最大为50，
+            例如当pos为10，cnt为20时，返回搜索结果的第10-30条结果。
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest">
+            <summary>
+            达观搜索发文数据查询请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest"/>
+            </summary>
+            <param name="languageType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.LanguageType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.DataCategory">
+            <summary>
+            【必填项】 业务系统中数据场景<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.UserCode">
+            <summary>
+            【必填项】用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Keyword">
+            <summary>
+            【必填项】搜索查询词，utf-8 编码,允许在某些情况下留空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Position">
+            <summary>
+            【必填项】分页返回结果的开始项，默认为0。
+            注意Position不是起始页数，而是当前页的起始条数。
+            比如每页返回条数cnt=10, 则第1页的pos=0, 第2页的pos=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Count">
+            <summary>
+            【必填项】每页返回的结果条数，默认为20，最大为50，
+            例如当pos为10，cnt为20时，返回搜索结果的第10-30条结果。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.ExactFilterItems">
+            <summary>
+            多字段精确匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Filter">
+            <summary>
+            多字段精确匹配查询，filter=status:1+stage_statue:2，
+            查询发文状态为1，环节状态为2的发文，详见通用接口描述中关于filter的用法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.ExactNotFilterItems">
+            <summary>
+            不匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.NotFilter">
+            <summary>
+            不匹配查询，not_filter=status:1+stage_statue:2，
+            查询发文状态为1，环节状态为2的发文，详见通用接口描述中关于filter的用法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.SortItems">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Sort">
+            <summary>
+            排序字段，sort=field1,field
+            默认是拟制时间倒叙排序
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Revert">
+            <summary>
+            排序顺序，revert=revert1,revert2
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.FuzzyFilterItems">
+            <summary>
+            多字段模糊匹配
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Fuzzy">
+            <summary>
+            多字段模糊匹配，fuzzy=title:请假+content:请假天数，
+            查询title中包含“请假”及content中包含“请假天数”的发文。le:请假+abstract:印度请假
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.DatetimeFilterItems">
+            <summary>
+            时间过滤查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest.Range">
+            <summary>
+            区间筛选，如range=publish_time>=1561778412，查询发文时间大于“1561778412”的发文
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1">
+            <summary>
+            达观搜索通用数据操作请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1.TableName">
+            <summary>
+            【必填项】表名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1.DataOperations">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1.TableContent">
+            <summary>
+            数据操作内容
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest">
+            <summary>
+            达观搜索便签数据查询请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType,Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest"/>
+            </summary>
+            <param name="languageType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/></param>
+            <param name="mailSource"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.DataCategory">
+            <summary>
+            【必填项】 业务系统中数据场景<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.UserCode">
+            <summary>
+            【必填项】用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.MailSource">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.LanguageType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Query">
+            <summary>
+            【必填项】搜索查询词，utf-8 编码,允许在某些情况下留空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.FuzzyFilterItems">
+            <summary>
+            多字段模糊匹配
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Fuzzy">
+            <summary>
+            多字段模糊匹配，fuzzy=title:请假+content:请假天数，
+            查询title中包含“请假”及content中包含“请假天数”的发文。le:请假+abstract:印度请假
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.ExactFilterItems">
+            <summary>
+            多字段精确匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Filter">
+            <summary>
+            多字段精确匹配查询，filter=status:1+stage_statue:2，
+            查询发文状态为1，环节状态为2的发文，详见通用接口描述中关于filter的用法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.DatetimeFilterItems">
+            <summary>
+            时间过滤查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Range">
+            <summary>
+            区间筛选，如range=publish_time>=1561778412，查询发文时间大于“1561778412”的发文
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Position">
+            <summary>
+            分页返回结果的开始项，默认为0。
+            注意Position不是起始页数，而是当前页的起始条数。
+            比如每页返回条数cnt=10, 则第1页的pos=0, 第2页的pos=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest.Count">
+            <summary>
+            每页返回的结果条数，默认为20，最大为50，
+            例如当pos为10，cnt为20时，返回搜索结果的第10-30条结果。
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest">
+            <summary>
+            达观搜索模块数据查询请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest"/>
+            </summary>
+            <param name="languageType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.LanguageType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.DataCategory">
+            <summary>
+            【必填项】 业务系统中数据场景<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.UserCode">
+            <summary>
+            【必填项】用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.ExactFilterItems">
+            <summary>
+            多字段精确匹配查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Filter">
+            <summary>
+            多字段精确匹配查询，filter=status:1+stage_statue:2，
+            查询发文状态为1，环节状态为2的发文，详见通用接口描述中关于filter的用法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.FuzzyFilterItems">
+            <summary>
+            多字段模糊匹配
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Fuzzy">
+            <summary>
+            多字段模糊匹配，fuzzy=title:请假+content:请假天数，
+            查询title中包含“请假”及content中包含“请假天数”的发文。le:请假+abstract:印度请假
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.DatetimeFilterItems">
+            <summary>
+            时间过滤查询
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Range">
+            <summary>
+            区间筛选，如range=publish_time>=1561778412，查询发文时间大于“1561778412”的发文
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Query">
+            <summary>
+            【必填项】搜索查询词，utf-8 编码,允许在某些情况下留空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Position">
+            <summary>
+            分页返回结果的开始项，默认为0。
+            注意Position不是起始页数，而是当前页的起始条数。
+            比如每页返回条数cnt=10, 则第1页的pos=0, 第2页的pos=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest.Count">
+            <summary>
+            每页返回的结果条数，默认为20，最大为50，
+            例如当pos为10，cnt为20时，返回搜索结果的第10-30条结果。
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem">
+            <summary>
+            达观搜索模块关键字更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.Keywords">
+            <summary>
+            【必填项】流程/功能控件参数名拼接，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.Description">
+            <summary>
+            【必填项】模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem">
+            <summary>
+            达观搜索模块权限更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.Roles">
+            <summary>
+            【必填项】该条数据对应的权限角色列表，列表元素为string类型，
+            可能为userid、groupid或departid的抽象角色，采用加前缀的方式进行区分，
+            userid前加"u_"，groupid前加"g_"，departid前加"d_"，对于权限角色，业务系统可以进行自定义，
+            保证角色的唯一性，保证与用户侧的角色一致即可，如：[“u_1002”, “g_2001”, “d_2001”]
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest">
+            <summary>
+            达观搜索按操作批次删除权限请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest.#ctor(System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest"/>
+            </summary>  
+            <param name="actionId">标识一个批次的操作，即用户的⾏为标识，如果是-1，则删除全部上报的数据，否则删除action_id下的数据</param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest.AppId">
+            <summary>
+            【必填项】应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest.ActionId">
+            <summary>
+            【必填项】标识一个批次的操作，即用户的⾏为标识，如果是-1，则删除全部上报的数据，否则删除action_id下的数据
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest.Sign">
+            <summary>
+            【必填项】参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest">
+            <summary>
+            达观搜索按用户删除权限请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.AppId">
+            <summary>
+            【必填项】 应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.UserCodes">
+            <summary>
+            【必填项】需要删除的用户编码s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.Users">
+            <summary>
+            【必填项】需要删除的用户编码s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest.Sign">
+            <summary>
+            【必填项】 参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1">
+            <summary>
+            达观搜索权限操作请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.AppId">
+            <summary>
+            【必填项】应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.ActionId">
+            <summary>
+            【必填项】标识一个批次的操作
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.PermissionOperations">
+             <summary>
+            【必填项】 达观搜索权限操作s
+             </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.Content">
+             <summary>
+            【必填项】 达观搜索权限操作s
+             </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1.Sign">
+            <summary>
+            【必填项】参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest">
+            <summary>
+            达观搜索权限查询请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest.AppId">
+            <summary>
+            【必填项】应用标识，由达观搜索提供
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest.UserCode">
+            <summary>
+            用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            如客户端与服务端的时间相差在10分钟以上，接口调用失败，请确保服务器时间的准确性
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest.Sign">
+            <summary>
+            【必填项】参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem">
+            <summary>
+            达观搜索流程模块设置更新Input
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.ModuleName">
+            <summary>
+            【必填项】功能或流程模块名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.Description">
+            <summary>
+            【必填项】模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandProcessModuleSettingUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem">
+            <summary>
+            达观搜索提示词新增Input
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.SuggestionId">
+            <summary>
+            提示Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.SuggestionSource">
+             <summary>
+            【必填项】 <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionSource"/>
+             </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.PermissionType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionPermissionType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.SuggestionWord">
+            <summary>
+            【必填项】提示词
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.Weight">
+            <summary>
+            【必填项】提示词权重（0~10）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.CreationTime">
+            <summary>
+            【必填项】创建时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.LastUpdateTime">
+            <summary>
+            【必填项】最后更新时间
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest">
+            <summary>
+            达观搜索提示词QueryRequest
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest.Query">
+            <summary>
+            【可空】用户输入的待自动补全的搜索关键词，例如“变”字，utf-8 编码，不可为空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest.Position">
+            <summary>
+            【必填项】分页返回结果的开始项，默认为0。
+            注意Position不是起始页数，而是当前页的起始条数。
+            比如每页返回条数cnt=10, 则第1页的pos=0, 第2页的pos=10,以此类推。
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest.Count">
+            <summary>
+            要返回的结果条数，最大支持20，默认返回10条suggest结果
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDeleteInputItem">
+            <summary>
+            达观搜索提示词删除InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDeleteInputItem.#ctor(System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDeleteInputItem"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest`1">
+            <summary>
+             达观搜索提示词操作请求模型
+            </summary>
+            <typeparam name="TDataGrandSuggestionInputItem"></typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest`1.TableName">
+            <summary>
+            【必填项】表名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest`1.DataOperations">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest`1.TableContent">
+            <summary>
+            提示词操作内容
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest" -->
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.TableName">
+            <summary>
+            【必填项】表名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.TableContent">
+            <summary>
+            提示词操作内容
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.DataGrandSuggestionRefreshOperation">
+            <summary>
+            达观搜索提示词清空操作
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.DataGrandSuggestionRefreshOperation.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.DataGrandSuggestionRefreshOperation"/>
+            </summary>
+            <param name="dataGrandSuggestionOperationType"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.DataGrandSuggestionRefreshOperation.OperationType" -->
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest.DataGrandSuggestionRefreshOperation.OperationInputItem">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest">
+            <summary>
+            达观搜索提示词请求模型
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest.Query">
+            <summary>
+            【必填项】用户输入的待自动补全的搜索关键词，例如“变”字，utf-8 编码，不可为空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest.UserCode">
+            <summary>
+            用户编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest.Count">
+            <summary>
+            要返回的结果条数，最大支持20，默认返回10条suggest结果
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem">
+            <summary>
+            达观搜索提示词更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem.#ctor(System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem"/>
+            </summary>
+            <param name="itemId">提示词ItemId</param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem.SuggestionWord">
+            <summary>
+            【必填项】提示词
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem.Weight">
+            <summary>
+            【必填项】提示词权重(0-10)
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionUpdateInputItem.LastUpdateTime">
+            <summary>
+            【必填项】最后更新时间
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1">
+            <summary>
+            达观搜索用户行为Operation
+            </summary>
+            <typeparam name="TDataGrandUserBehaviorInputItem"></typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1.#ctor(Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType,`0)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1"/>
+            </summary>
+            <param name="dataGrandDataOperationType"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType"/></param>
+            <param name="operationInputItem"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.BaseDataGrandUserBehaviorInputItem"/></param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1.OperationType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperationType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1.BehaviorInputItem">
+            <summary>
+            <see cref="T:System.Collections.Generic.List`1"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1">
+            <summary>
+            达观搜索用户行为操作请求模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1.TableName">
+            <summary>
+            【必填项】表名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1.DataOperations">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperation`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1.TableContent">
+            <summary>
+            用户行为操作内容
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserClickBehaviorAddInputItem">
+            <summary>
+            达观搜索用户点击行为新增InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserClickBehaviorAddInputItem.#ctor(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory,System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserClickBehaviorAddInputItem"/>
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataCategory"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/></param>
+            <param name="itemId">用户点击对象的itemid</param>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem">
+            <summary>
+            达观搜索用户搜索行为新增InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.#ctor(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory,System.String)">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem"/>
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataCategory"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/></param>
+            <param name="query">关键字</param>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.Query">
+            <summary>
+            【搜索行为】用户搜索词
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.Position">
+            <summary>
+            【搜索行为】用户搜索分页起始位置
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.Count">
+            <summary>
+            【搜索行为】用户搜索分页大小
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.SortField">
+            <summary>
+            【搜索行为】搜索时使用的排序字段，未提供则使用“default”。可以为：“time”，“score”，“weighted”
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.ResultTotalCount">
+            <summary>
+            【搜索行为】搜索召回的条目个数
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem.QueryElapseMilliseconds">
+            <summary>
+            【搜索行为】搜索接口调用所耗费的时间（单位：毫秒）
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.ISignatureBasedDataGrandRequest">
+            <summary>
+            基于签名的达观搜索请求Interface
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.ISignatureBasedDataGrandRequest.Sign">
+            <summary>
+            参数签名，防止请求被劫持篡改参数
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.BaseDataGrandPermissionInputItem">
+            <summary>
+            基础达观搜索权限InputItem
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.BaseDataGrandPermissionInputItem.UserCode">
+            <summary>
+            【必填项】用户编码
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem">
+            <summary>
+            达观搜索发文数据新增InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.FormInstanceCode">
+            <summary>
+            【必填项】发文Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.ProcessSetId">
+            <summary>
+            【必填项】流程模板Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.FormStatus">
+            <summary>
+            【必填项】发文状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.LinkStatus">
+            <summary>
+            【必填项】环节状态??
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.ControlNames">
+            <summary>
+            【必填项】控件名称拼接产生，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.FormTitle">
+            <summary>
+            【必填项】发文标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.FormContent">
+            <summary>
+            【必填项】发文内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AttachmentUrls">
+            <summary>
+            【必填项】附件Urls
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AttachmentNames">
+            <summary>
+            【必填项】附件名称s,如有多个，请用\3分隔，并保持与attachments的顺序一致
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CreatorUserCodes">
+            <summary>
+            【必填项】拟制人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CreatorUserNames">
+            <summary>
+            【必填项】拟制人姓名s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CreatorDepartmentName">
+            <summary>
+            【必填项】拟制部门名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CreationTime">
+            <summary>
+            【必填项】拟制时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CurrentAuditorUserCodes">
+            <summary>
+            【必填项】待审批人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.CurrentAuditorNames">
+            <summary>
+            【必填项】待审批人姓名s，如有多个，请用\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.ApprovedAuditorUserCodes">
+            <summary>
+            【必填项】已审批人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AuditorUserCodes">
+            <summary>
+            【必填项】所有审批人工号s，不包括拟制人
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AuditorNames">
+            <summary>
+            【必填项】所有审批人姓名s，如有多个，请用\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AuditActivityId">
+            <summary>
+            【必填项】当前审批节点Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.AuditActivityName">
+            <summary>
+            【必填项】当前审批节点名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.LastAuditorUserName">
+            <summary>
+            【必填项】最后审批人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.ControlValueItem">
+            <summary>
+            【可填项】动态控件搜索项，utf-8 编码,允许在某些情况下留空
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.Roles">
+            <summary>
+            【必填项】该条数据对应的权限角色列表，列表元素为string类型，可能为userId、groupId或departId的抽象角色，
+            采用加前缀的方式进行区分，userId前加"u_"，groupId前加"g_"，departId前加"d_"，对于权限角色，
+            业务系统可以进行自定义，保证角色的唯一性，保证与用户侧的角色一致即可。
+            如: [“u_1002”, “g_2001”, “d_2001”]
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.LanguageType">
+            <summary>
+            【必填项】语言
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.UserItemID">
+            <summary>
+            【必填项】用户唯一标识ID，审批人为工号，读者为环节ID
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId(如果区别对待同一发文的不同审批阶段，那么需要调整此方法的实现)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem">
+            <summary>
+            达观搜索发文数据删除InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem.FormInstanceCode">
+            <summary>
+            【必填项】发文Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem.UserItemID">
+            <summary>
+            【必填项】当前审批节点Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId(如果区别对待同一发文的不同审批阶段，那么需要调整此方法的实现)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem">
+            <summary>
+            达观搜索发文数据更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.FormInstanceCode">
+            <summary>
+            【必填项】发文Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AuditActivityId">
+            <summary>
+            【必填项】当前审批节点Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AuditActivityName">
+            <summary>
+            【必填项】当前审批节点名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AuditorNames">
+            <summary>
+            【必填项】审批人姓名s，如有多个，请用\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AuditorUserCodes">
+            <summary>
+            【必填项】审批人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.LastAuditorUserName">
+            <summary>
+            【必填项】最后审批人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AttachmentUrls">
+            <summary>
+            【必填项】附件Urls
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.AttachmentNames">
+            <summary>
+            【必填项】附件名称s,如有多个，请用\3分隔，并保持与attachments的顺序一致
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.FormContent">
+            <summary>
+            【必填项】发文内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.Roles">
+            <summary>
+            【必填项】该条数据对应的权限角色列表，列表元素为string类型，
+            可能为userid、groupid或departid的抽象角色，采用加前缀的方式进行区分，
+            userid前加"u_"，groupid前加"g_"，departid前加"d_"，对于权限角色，业务系统可以进行自定义，
+            保证角色的唯一性，保证与用户侧的角色一致即可，如：[“u_1002”, “g_2001”, “d_2001”]
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId(如果区别对待同一发文的不同审批阶段，那么需要调整此方法的实现)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem">
+            <summary>
+            达观搜索便签（邮件）数据新增InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.MailCode">
+            <summary>
+            【必填项】邮件编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.Title">
+            <summary>
+            【必填项】邮件标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.Content">
+            <summary>
+            【必填项】邮件内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.AttachmentUrls">
+            <summary>
+            【必填项】附件地址s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.AttachmentNames">
+            <summary>
+            【必填项】附件名称s,以\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.Owner">
+            <summary>
+            【必填项】拥有者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.Sender">
+            <summary>
+            【必填项】发送者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.SenderName">
+            <summary>
+            【必填项】发送者姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.Receivers">
+            <summary>
+            【必填项】收件人s（帐号或Id）
+            如邮箱类型为<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.inbox"/>，则为单值列表；
+            如邮箱类型为<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.outbox"/>，则为多值列表（收件人id或部门id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.ReceiverNames">
+            <summary>
+            【必填项】所有接受者姓名s,以\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.MailSource">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.CreationTime">
+            <summary>
+            便签创建时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.SendTime">
+            <summary>
+            便签发送时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource">
+            <summary>
+            达观搜索便签数据来源
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.all">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.inbox">
+            <summary>
+            收件箱
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.outbox">
+            <summary>
+            发件箱
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.trashbox">
+            <summary>
+            废纸篓
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource.draftbox">
+            <summary>
+            草稿箱
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem">
+            <summary>
+            达观搜索便签（邮件）数据删除InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem.MailCode">
+            <summary>
+            【必填项】邮件编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem.MailSource">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem.Owner">
+            <summary>
+            【必填项】便签拥有者的员工编码（即收件人/发件人工号）
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem">
+            <summary>
+            达观搜索便签（邮件）数据更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.Title">
+            <summary>
+            【必填项】邮件标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.Content">
+            <summary>
+            【必填项】邮件内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.AttachmentUrls">
+            <summary>
+            【必填项】附件地址s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.AttachmentNames">
+            <summary>
+            【必填项】附件名称s,以\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.Sender">
+            <summary>
+            【必填项】发送者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.SenderName">
+            <summary>
+            【必填项】发送者姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.SendTime">
+            <summary>
+            便签发送时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.MailCode">
+            <summary>
+            【必填项】邮件编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.MailSource">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.Owner">
+            <summary>
+            【必填项】拥有者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem">
+            <summary>
+            达观搜索模块数据新增InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.ModuleName">
+            <summary>
+            【必填项】功能或流程模块名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.Description">
+            <summary>
+            【必填项】模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.Keywords">
+            <summary>
+            【必填项】流程/功能控件参数名拼接，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.Roles">
+            <summary>
+            【必填项】该条数据对应的权限角色列表，列表元素为string类型，
+            可能为userid、groupid或departid的抽象角色，采用加前缀的方式进行区分，
+            userid前加"u_"，groupid前加"g_"，departid前加"d_"，对于权限角色，业务系统可以进行自定义，
+            保证角色的唯一性，保证与用户侧的角色一致即可，如：[“u_1002”, “g_2001”, “d_2001”]
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem">
+            <summary>
+            达观搜索模块数据删除InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem">
+            <summary>
+            达观搜索模块数据更新InputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.ModuleName">
+            <summary>
+            【必填项】功能或流程模块名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.Description">
+            <summary>
+            【必填项】模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.Keywords">
+            <summary>
+            【必填项】流程/功能控件参数名拼接，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.ModuleId">
+            <summary>
+            【必填项】模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.ModuleType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.LanguageType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandLanguageType"/>
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem.GenerateConventionalItemId">
+            <summary>
+            生成ItemId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionAddOrUpdateInputItem">
+            <summary>
+            达观搜索权限新增或更新Input
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionAddOrUpdateInputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionAddOrUpdateInputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionAddOrUpdateInputItem.Roles">
+            <summary>
+            【必填项】 标识了当前用户的角色列表，列表元素为string类型，可能为userid、groupid或departid的抽象角色，
+            采用加前缀的方式进行区分，userid前加"u_"，groupid前加"g_"，departid前加"d_"，对于权限角色，
+            业务系统可以进行自定义，保证角色的唯一性，保证文档侧的角色一致即可，如: [“u_1002”, “g_2001”, “d_2001”]
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionDeleteInputItem">
+            <summary>
+            达观搜索权限删除InputItem
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem">
+            <summary>
+            达观搜索发文数据查询OutputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.FormInstanceCode">
+            <summary>
+            发文Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.ProcessSetId">
+            <summary>
+            流程模板Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.KeyWords">
+            <summary>
+            【必填项】控件名称拼接产生，以\3分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.FormStatus">
+            <summary>
+            发文状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.FormTitle">
+            <summary>
+            发文标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.FormContent">
+            <summary>
+            发文内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.AttachmentUrls">
+            <summary>
+            附件Urls
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.AttachmentNames">
+            <summary>
+            附件名称s,如有多个，请用\3分隔，并保持与attachments的顺序一致
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.CreatorUserCodes">
+            <summary>
+            拟制人工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.CreatorUserNames">
+            <summary>
+            拟制人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.CreatorDepartmentName">
+            <summary>
+            拟制部门名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.CreationTime">
+            <summary>
+            拟制时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.AuditorUserCodes">
+            <summary>
+            审批人工号s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.AuditorNames">
+            <summary>
+            审批人姓名s，如有多个，请用\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.AuditActivityName">
+            <summary>
+            当前审批节点名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.LastAuditorUserName">
+            <summary>
+            最后审批人姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.Score">
+            <summary>
+            匹配度
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataQueryOutputItem.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`1">
+            <summary>
+            达观搜索查询响应模型
+            </summary>
+            <typeparam name="TData"></typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`1.TotalCount">
+            <summary>
+            查询结果总数，如搜索失败，则resultcount值为-1
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`1.ResultData">
+            <summary>
+            查询结果
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`2">
+            <summary>
+            达观搜索查询响应模型
+            </summary>
+            <typeparam name="TData">返回数据</typeparam>
+                /// <typeparam name="TError">返回错误</typeparam>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`2.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`2"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`2.TotalCount">
+            <summary>
+            查询结果总数，如搜索失败，则resultcount值为-1
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandDataQueryResponse`2.ResultData">
+            <summary>
+            查询结果
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandError">
+            <summary>
+            达观搜索错误信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandError.Code">
+            <summary>
+            错误编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandError.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse">
+            <summary>
+            达观搜索权限查询响应模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.Status">
+            <summary>
+            响应状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.Roles">
+            <summary>
+            用户所拥有的角色s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.RequestId">
+            <summary>
+            本次请求Id（用于追踪问题）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.Errors">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandPermissionQueryResponse.IsOk">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`1">
+            <summary>
+            达观搜索响应模型
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`1.Status">
+            <summary>
+            响应状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`1.RequestId">
+            <summary>
+            本次请求Id（用于追踪问题）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`1.Errors">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`1.IsOk">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`2">
+            <summary>
+            达观搜索响应模型
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`2.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`2"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponse`2.ResultData">
+            <summary>
+            响应数据
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponseStatus">
+            <summary>
+            达观搜索响应状态
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponseStatus.UNKOWN">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponseStatus.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponseStatus.FAIL">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandResponseStatus.WARN">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionOutputItem">
+            <summary>
+            达观搜索提示词OutputItem
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionOutputItem.SuggestionWord">
+            <summary>
+            提示词
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionOutputItem.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionOutputItem.Weight">
+            <summary>
+            权重
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem">
+            <summary>
+            达观搜索提示词分页获取OutputItem
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.ItemId">
+            <summary>
+            item的唯一id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.SuggestionWord">
+            <summary>
+            提示词
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.Weight">
+            <summary>
+            提示词权重（0~10）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.PermissionType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionPermissionType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.UserCode">
+            <summary>
+            用户id，仅当permission为”private”时有值
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.DataGrandSuggestionQueryOutputItem.LastUpdateTime">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.IDataGrandBaseResponse">
+            <summary>
+            达观搜索响应模型接口
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.IDataGrandBaseResponse.Status">
+            <summary>
+            响应状态
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.IDataGrandBaseResponse.RequestId">
+            <summary>
+            本次请求Id（用于追踪问题）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.Responses.IDataGrandBaseResponse.IsOk">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem">
+            <summary>
+            达观搜索便签数据查询OutputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.MailCode">
+            <summary>
+            邮件编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Title">
+            <summary>
+            邮件标题
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Content">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.MailSource">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailSource"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Owner">
+            <summary>
+            拥有者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Sender">
+            <summary>
+            发送者（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.SenderName">
+            <summary>
+            发送者姓名
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Receivers">
+            <summary>
+            所有接收者s（帐号或Id）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.ReceiverNames">
+            <summary>
+            所有接收者姓名以,拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.AttachmentUrls">
+            <summary>
+            附件地址s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.AttachmentNames">
+            <summary>
+            附件名称s,以\3拼接
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.CreationTime">
+            <summary>
+            便签创建时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.SendTime">
+            <summary>
+            便签发送时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Score">
+            <summary>
+            匹配度
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataQueryOutputItem.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem">
+            <summary>
+            达观搜索模块数据查询OutputItem
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.ItemId">
+            <summary>
+            数据记录Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.DataCategory">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandDataCategory"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.ModuleId">
+            <summary>
+            模块Id
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.ModuleName">
+            <summary>
+            功能或流程模块名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.ModuleType">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.MO2DataGrandModuleType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.Description">
+            <summary>
+            模块描述
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.Keywords">
+            <summary>
+            流程/功能控件参数名拼接，以,分割
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.Score">
+            <summary>
+            匹配度
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataQueryOutputItem.Highlights">
+            <summary>
+            高亮s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandArticleDataWebApiService">
+            <summary>
+            达观搜索发文数据服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandArticleDataWebApiService.AddOrCoverDataGrandArticleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataAddInputItem})">
+            <summary>
+            达观搜索发文数据新增或者覆盖
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandArticleDataWebApiService.UpdateDataGrandArticleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataUpdateInputItem})">
+            <summary>
+            达观搜索发文数据更新
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandArticleDataWebApiService.DeleteDataGrandArticleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandArticleDataDeleteInputItem})">
+            <summary>
+            达观搜索发文数据删除
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchAppService.AggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandAggregateSearchInput)">
+            <summary>
+            聚合搜索
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataGrandAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchAppService.ArticleAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput)">
+            <summary>
+            发文聚合搜索
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataGrandArticleAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandArticleAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchAppService.MailAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput)">
+            <summary>
+            便签聚合搜索
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataGrandMailAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandMailAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchAppService.ModuleAggregateSearch(System.String,Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandModuleAggregateSearchInput)">
+            <summary>
+            模块聚合搜索
+            </summary>
+            <param name="userCode">用户编码</param>
+            <param name="dataGrandModuleAggregateSearchInput"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Dtos.DataGrandModuleAggregateSearchInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService">
+            <summary>
+            达观搜索数据查询WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService.GetDataGrandArticleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest)">
+            <summary>
+            达观搜索发文数据搜索
+            </summary>
+            <param name="dataQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandArticleDataQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService.GetDataGrandMailDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest)">
+            <summary>
+            达观搜索便签数据搜索
+            </summary>
+            <param name="dataQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandMailDataQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService.GetDataGrandModuleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest)">
+            <summary>
+            达观搜索模块数据搜索
+            </summary>
+            <param name="dataQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleDataQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService.GetDataGrandAggregateDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest)">
+            <summary>
+            达观搜索数据聚合查询
+            </summary>
+            <param name="dataQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandAggregateQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandDataSearchWebApiService.GetDataGrandSuggestionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest)">
+            <summary>
+            获取提示词
+            </summary>
+            <param name="suggestionRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandMailDataWebApiService">
+            <summary>
+            达观搜索便签数据服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandMailDataWebApiService.DataGrandMailDataAddOrCoverAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataAddInputItem})">
+            <summary>
+            达观搜索便签数据新增或者覆盖
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandMailDataWebApiService.DataGrandMailDataUpdateAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataUpdateInputItem})">
+            <summary>
+            达观搜索便签数据更新
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandMailDataWebApiService.DataGrandMailDataDeleteAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandMailDataDeleteInputItem})">
+            <summary>
+            达观搜索便签数据删除
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService">
+            <summary>
+            达观搜索模块数据服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService.AddOrCoverDataGrandModuleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataAddInputItem})">
+            <summary>
+            达观搜索模块数据新增或者覆盖
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService.DeleteDataGrandModuleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataDeleteInputItem})">
+            <summary>
+            达观搜索模块数据删除Input
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService.UpdateDataGrandModuleDataAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandModuleDataUpdateInputItem})">
+            <summary>
+            达观搜索模块数据更新
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService.UpdateDataGrandModuleKeywordsAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModuleKeywordsUpdateInputItem})">
+            <summary>
+            达观搜索模块关键字更新
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandModuleDataWebApiService.UpdateDataGrandModulePermssionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandDataOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandModulePermissionUpdateInputItem})">
+            <summary>
+            达观搜索模块权限更新 
+            </summary>
+            <param name="dataOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService">
+            <summary>
+            达观搜索权限服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService.AddOrCoverDataGrandPermissionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionAddOrUpdateInputItem})">
+            <summary>
+            达观搜索权限新增或覆盖(记录存在则更新，不存在则新增)
+            </summary>
+            <param name="permissionOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService.DeleteDataGrandPermissionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandPermissionDeleteInputItem})">
+            <summary>
+            达观搜索权限删除
+            </summary>
+            <param name="permissionOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService.DeleteDataGrandPermissionByActionIdAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest)">
+            <summary>
+            按操作批次清空达观搜索权限
+            </summary>
+            <param name="deletePermissionByActionRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByActionRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService.DeleteDataGrandPermissionByUserAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest)">
+            <summary>
+            达观搜索权限按用户批量删除
+            </summary>
+            <param name="deletePermissionByUserRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionDeleteByUserRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandPermissionWebApiService.QueryDataGrandPermissionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest)">
+            <summary>
+            达观搜索权限查询
+            </summary>
+            <param name="permissionQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandPermissionQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandSuggestionWebApiService">
+            <summary>
+            达观搜索提示词服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandSuggestionWebApiService.GetPagedDataGrandSuggestionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest)">
+            <summary>
+            分页获取提示词
+            </summary>
+            <param name="suggestionDataQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDataQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandSuggestionWebApiService.AddOrCoverSuggestionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionAddInputItem})">
+            <summary>
+            新增或者覆盖提示词
+            </summary>
+            <param name="suggestionOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandSuggestionWebApiService.DeleteDataGrandSuggesionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionDeleteInputItem})">
+            <summary>
+            删除提示词
+            </summary>
+            <param name="suggestionOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandDataOperation`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandSuggestionWebApiService.RefreshDataGrandSuggestionAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest)">
+            <summary>
+            清空提示词，包括：
+            1、全量删除<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_all"/>
+            2、删除私有<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_private"/>
+            3、删除公有<see cref="F:Com.OPPO.Mo.Thirdparty.DataGrand.DataGrandSuggestionOperationType.refresh_public"/>
+            </summary>
+            <param name="suggestionOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandSuggestionRefreshOperationRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandUserBehaviorWebApiService">
+            <summary>
+            达观搜索用户行为服务WebApi接口
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandUserBehaviorWebApiService.AddDataGrandUserSearchBehaviorAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserSearchBehaviorAddInputItem})">
+            <summary>
+            新增用户搜索行为
+            </summary>
+            <param name="behaviorOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.DataGrand.Services.IDataGrandUserBehaviorWebApiService.AddDataGrandUserClickBehaviorAsync(Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest{Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserClickBehaviorAddInputItem})">
+            <summary>
+            新增用户点击行为
+            </summary>
+            <param name="behaviorOperationRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.DataGrand.Requests.DataGrandUserBehaviorOperationRequest`1"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsBusinessOwnerDto">
+            <summary>
+            跳板机业务主责人Dto
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsBusinessOwnerDto.IsOperator">
+            <summary>
+            是否运维人员
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsBusinessOwnerDto.OperationOwners">
+            <summary>
+            运维主责人s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsBusinessOwnerDto.DevelopOwners">
+            <summary>
+            业务主责人s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsBusinessOwnerDto.TestOwners">
+            <summary>
+            测试主责人s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsHostDto">
+            <summary>
+            跳板机服务器Dto
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsHostDto.Ip">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsHostDto.HostName">
+            <summary>
+             服务器名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsHostDto.Businesses">
+            <summary>
+            业务s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput">
+            <summary>
+            跳板机权限新增 input
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput.User">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsUserDto"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput.ApplyInfo">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto">
+            <summary>
+            跳板机权限申请Dto
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.Role">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.TermType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsTermType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.TimeFrom">
+            <summary>
+            【必填项】时间From
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.TimeTo">
+            <summary>
+            【必填项】时间To
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.Businesses">
+            <summary>
+            【必填项】业务s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.Hosts">
+            <summary>
+            【必填项】主机s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionApplyDto.Reason">
+            <summary>
+            【必填项】原因
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput">
+            <summary>
+            跳板机流程实例结束回调 input
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput.ProcessInstanceCode">
+            <summary>
+            【必填项】流程实例编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput.ApprovalStatus">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalStatus"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsUserDto">
+            <summary>
+            跳板机用户Dto
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsUserDto.UserCode">
+            <summary>
+            用户工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsUserDto.UserName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.JmsHostInfo">
+            <summary>
+            跳板机服务器信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsHostInfo.Ip">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsHostInfo.HostName">
+            <summary>
+            服务器名称
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsHostInfo.Businesses">
+            <summary>
+            业务s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.JmsRequestUserInfo">
+            <summary>
+            跳板机请求用户信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsRequestUserInfo.UserCode">
+            <summary>
+            用户工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsRequestUserInfo.UserName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.JmsResponseUserInfo">
+            <summary>
+            跳板机响应的用户信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsResponseUserInfo.UserCode">
+            <summary>
+            用户工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.JmsResponseUserInfo.UserName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest">
+            <summary>
+            跳板机 Base request
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest.DateTime">
+            <summary>
+            【必填项】调用接口时的秒级时间戳，如1561945554。
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsBusinessOwnerQueryRequest">
+            <summary>
+            跳板机业务Owner query request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsBusinessOwnerQueryRequest.UserCode">
+            <summary>
+            【必填项】用户工号
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsBusinessOwnerQueryRequest.Business">
+            <summary>
+            【必填项】业务树,譬如:["/a/b","/a/b/c","/x/y"]
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsHostInfoQueryRequest">
+            <summary>
+            跳板机服务器信息 Query request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsHostInfoQueryRequest.Ip">
+            <summary>
+            【Ip地址和服务器名称二填一即可】Ip地址
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsHostInfoQueryRequest.HostName">
+            <summary>
+            【Ip地址和服务器名称二填一即可】服务器名称
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsModuleQueryRequest">
+            <summary>
+            跳板机模块 Query request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsModuleQueryRequest.Product">
+            <summary>
+            【必填项】产品
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsModuleQueryRequest.Service">
+            <summary>
+            【必填项】服务
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionAddRequest">
+            <summary>
+            跳板机权限新增 request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionAddRequest.User">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.JmsRequestUserInfo"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionAddRequest.ApplyInfo">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo">
+            <summary>
+            跳板机权限申请信息
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.Role">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.TermType">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsTermType"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.TimeFrom">
+            <summary>
+            【必填项】时间From
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.TimeTo">
+            <summary>
+            【必填项】时间To
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.TimeRange">
+            <summary>
+            时间Range
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.Businesses">
+            <summary>
+            【必填项】业务s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.IsEuMachine">
+            <summary>
+            【必填项】是否欧盟机器
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.IsEuropoMachine">
+            <summary>
+            是否欧盟机器
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.IsTemp">
+            <summary>
+            是否临时
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.Hosts">
+            <summary>
+            【必填项】主机s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionApplyInfo.Reason">
+            <summary>
+            【必填项】原因
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole">
+            <summary>
+            跳板机角色
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole.administrator">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole.privileger">
+            <summary>
+            基本权限
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsRole.common_user">
+            <summary>
+            普通用户
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsTermType.short">
+            <summary>
+            短期
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsTermType.long">
+            <summary>
+            长期
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsProcessFinishedCallbackRequest">
+            <summary>
+            流程结束时回调Jms request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsProcessFinishedCallbackRequest.ApprovalInfo">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalInfo"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalInfo">
+            <summary>
+            Mo传递给Jms的审批信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalInfo.ProcessInstanceCode">
+            <summary>
+            【必填项】流程实例编码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalInfo.ApprovalStatus">
+            <summary>
+            【必填项】<see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalStatus"/>
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalStatus">
+            <summary>
+            Mo传递给Jms的审批状态
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalStatus.reject">
+            <summary>
+            拒绝
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.Jms.Requests.Mo2JmsApprovalStatus.pass">
+            <summary>
+            通过
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsServiceQueryRequest">
+            <summary>
+            跳板机服务 Query request
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsServiceQueryRequest.Product">
+            <summary>
+            【必填项】产品
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsBusinessOwnerInfo">
+            <summary>
+            跳板机业务主责人信息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsBusinessOwnerInfo.IsOperator">
+            <summary>
+            是否运维人员
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsBusinessOwnerInfo.OperationOwners">
+            <summary>
+            运维主责人s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsBusinessOwnerInfo.DevelopOwners">
+            <summary>
+            业务主责人s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsBusinessOwnerInfo.TestOwners">
+            <summary>
+            测试主责人s
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse">
+            <summary>
+            跳板机 Response
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse.Code">
+            <summary>
+            响应码
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse.Message">
+            <summary>
+            响应消息
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse.IsOk">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse`1">
+            <inheritdoc/>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponse`1.Data">
+            <summary>
+            响应内容
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponseDataBase`1">
+            <inheritdoc/>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponseDataBase`1.#ctor">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponseDataBase`1"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.Jms.Responses.JmsResponseDataBase`1.Data">
+            <summary>
+            响应内容
+            </summary>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsBusinessInfoWebApiService">
+            <summary>
+            跳板机业务信息 WebApi service
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsBusinessInfoWebApiService.GetJmsBusinessOwnerByUserAndBusinessTree(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsBusinessOwnerQueryRequest)">
+            <summary>
+            根据员工工号和业务树获取业务Owner
+            </summary>
+            <param name="jmsBusinessOwnerQueryRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsCallbackWebApiService.CallbackWhenProcessFinished(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsProcessFinishedCallbackRequest)">
+            <summary>
+            流程结束时回调
+            </summary>
+            <param name="jmsApporvalCallbackRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsProcessFinishedCallbackRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsHostInfoWebApiService">
+            <summary>
+            跳板机Host信息 WebApi service
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsHostInfoWebApiService.GetHostInfoByIpOrHostName(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsHostInfoQueryRequest)">
+            <summary>
+            通过Ip或服务名获取服务器信息
+            </summary>
+            <param name="jmsHostInfoQueryRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsModuleInfoWebApiService">
+            <summary>
+            跳板机模块信息 WebApi service
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsModuleInfoWebApiService.GetJmsModuleByProductAndService(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsModuleQueryRequest)">
+            <summary>
+            根据产品和服务获取模块
+            </summary>
+            <param name="jmsModuleQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsModuleQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsPermissionWebApiService.AddPermission(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionAddRequest)">
+            <summary>
+            新增Jms权限
+            </summary>
+            <param name="jmsPermissionAddRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsPermissionAddRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsProductInfoWebApiService">
+            <summary>
+            跳板机产品 WebApi Service
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsProductInfoWebApiService.GetAllProducts(Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest)">
+            <summary>
+            获取所有产品s
+            </summary>
+            <param name="baseJmsRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.BaseJmsRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService">
+            <summary>
+            跳板机 应用服务
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.GetAllJmsProducts">
+            <summary>
+            获取所有跳板机产品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.GetServiceByProduct(System.String)">
+            <summary>
+            根据跳板机产品获取服务
+            </summary>
+            <param name="product">产品</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.GetModuleByProductAndService(System.String,System.String)">
+            <summary>
+            根据跳板机产品和服务获取模块
+            </summary>
+            <param name="product">产品</param>
+            <param name="service">服务</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.GetHostInfoByIp(System.String)">
+            <summary>
+            根据跳板机ip获取服务器信息
+            </summary>
+            <param name="ip">ip</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.GetJmsBusinessOwnerByUserAndBusinessTree(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            根据用户和业务树获取跳板机业务Owner
+            </summary>
+            <param name="userCode">用户工号</param>
+            <param name="bussinesses">业务s</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.AddPermission(Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput)">
+            <summary>
+            新增跳板机权限
+            </summary>
+            <param name="jmsPermissionAddInput"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsPermissionAddInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsAppService.CallbackWhenProcessFinished(Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput)">
+            <summary>
+            跳板机流程结束回调
+            </summary>
+            <param name="jmsProcessFinishCallbackInput"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Dtos.JmsProcessFinishCallbackInput"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.OPPO.Mo.Thirdparty.Jms.IJmsServiceInfoWebApiService">
+            <summary>
+            跳板机服务信息 WebApi service
+            </summary>
+        </member>
+        <member name="M:Com.OPPO.Mo.Thirdparty.Jms.IJmsServiceInfoWebApiService.GetServiceByProduct(Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsServiceQueryRequest)">
+            <summary>
+            根据产品获取服务s
+            </summary>
+            <param name="jmsServiceQueryRequest"><see cref="T:Com.OPPO.Mo.Thirdparty.Jms.Requests.JmsServiceQueryRequest"/></param>
+            <returns></returns>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandDataUploadGatewayIdentitifier">
+            <summary>
+            达观搜索数据上报网关标识
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandDataSearchGatewayIdnentitifier">
+            <summary>
+            达观搜索数据搜索网关标识
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandDataTableName">
+            <summary>
+            达观搜索为Mo分配的数据存储表名
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandUserBehaviorTableName">
+            <summary>
+            达观搜索为Mo分配的用户行为存储表名
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandSuggestTableName">
+            <summary>
+            达观搜索为Mo分配的提示词存储表名
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.Mo2DataGrandRoleTypes">
+            <summary>
+            MO上报到达能搜索的角色类型
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.ProcessModuleListUrlTemplate">
+            <summary>
+            流程模块访问Url模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.ProcessModuleLaunchUrlTemplate">
+            <summary>
+            流程模块发起Url模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.FunctionModuleUrlTemplate">
+            <summary>
+            功能(菜单)模块Url模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.ExtensionModuleListUriTemplate">
+            <summary>
+            扩展模块访问Url模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.ExtensionModuleLaunchUriTemplate">
+            <summary>
+            扩展模块发起Url模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.InternalMailInOutboxUriTemplate">
+            <summary>
+            处于发件箱中便签Uri模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.InternalMailInDraftboxUriTemplate">
+            <summary>
+            处于草稿箱中的便签Uri模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.InternalInboxMailThatInTrashboxUriTemplate">
+            <summary>
+            处于废纸篓中的收件箱便签Uri模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.InternalOutboxMailThatInTrashboxUriTemplate">
+            <summary>
+            处于废纸篓中的发件箱便签Uri模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.InternalMailInInboxUriTemplate">
+            <summary>
+            处于收件箱中的便签Uri模板
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandUserPrefix">
+            <summary>
+            达观搜索人员角色前缀
+            达观搜索人员角色 =观搜索人员角色前缀+ MO员工号
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandGroupPrefix">
+            <summary>
+            达观搜索群组角色前缀
+            达观搜索群组角色 =达观搜索群组角色前缀+ MO角色编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandDepartmentPrefix">
+            <summary>
+            达观搜索部门角色前缀
+            达观搜索部门角色 =达观搜索部门角色前缀+ MO部门编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandWorkflowProcessManagerPrefix">
+            <summary>
+            达观搜索流程负责人(修改人)前缀
+            达观搜索流程负责人角色 =达观搜索流程负责人(修改人)前缀+ MO流程设置Id
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandArticleSpecialReaderPrefix">
+            <summary>
+            达观搜索发文特殊读者前缀
+             达观搜索特殊读者角色 =达观搜索发文特殊读者前缀+ 部门编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandDepartmentLeaderPrefix">
+            <summary>
+            达观搜索部门负责人前缀
+            达观搜索部门负责人角色 =达观搜索部门负责人前缀+ 部门编码
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandProcessModulePrefix">
+            <summary>
+            达观搜索流程模块Id前缀
+            达观搜索流程模块Id = 达观搜索流程模块Id前缀+ MO流程模块Id（ProcSetId）
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandFunctionModulePrefix">
+            <summary>
+            达观搜索功能模块Id前缀
+            达观搜索功能模块Id = 达观搜索功能模块Id前缀+ MO功能模块Id（MenuId）
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandExtensionModulePrefix">
+            <summary>
+            达观搜索扩展模块Id前缀
+            达观搜索扩展模块Id = 达观搜索扩展模块Id前缀+ MO扩展模块Id（ExtensionMenuId）
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandInboxMailPrefix">
+            <summary>
+            达观搜索收件箱便签Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandOutboxMailPrefix">
+            <summary>
+            达观搜索发件箱便签Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandTrashboxMailPrefix">
+            <summary>
+            达观搜索废纸篓便签Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandExtensionModuleSuggestionPrefix">
+            <summary>
+            达观搜索扩展模块提示Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandProcessModuleSuggestionPrefix">
+            <summary>
+            达观搜索流程模块提示Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandFunctionModuleSuggestionPrefix">
+            <summary>
+            达观搜索功能模块提示Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandCustomSuggestionPrefix">
+            <summary>
+            达观搜索自定义提示Id前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandEnglishItemIdPrefix">
+            <summary>
+            达观搜索英文ItemId前缀
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandChineseItemIdPrefix">
+            <summary>
+            达观搜索中文ItemId前缀
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DataGrandEraTime">
+            <summary>
+            达观搜索纪元时间
+            </summary>
+        </member>
+        <member name="F:Com.OPPO.Mo.Thirdparty.ThirdpartyConsts.DefaultDataGrandPageSize">
+            <summary>
+            达观搜索默认的每页记录条数
+            </summary>
+        </member>
+    </members>
+</doc>

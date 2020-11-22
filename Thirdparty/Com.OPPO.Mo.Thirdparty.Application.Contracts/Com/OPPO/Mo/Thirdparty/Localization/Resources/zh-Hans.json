@@ -1,0 +1,11 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "DisplayName:EsbHost": "Esb host",
+    "DisplayName:EsbAppId": "Esb 应用标识",
+    "DisplayName:EsbSignKey": "Esb 签名密钥",
+    "Description:EsbHost": "Esb host.",
+    "Description:EsbAppId": "Esb 应用标识.",
+    "Description:EsbSignKey": "Esb 签名密钥."
+  }
+}

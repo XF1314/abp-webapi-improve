@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.OPPO.Mo.Bpm.Application.Contracts</name>
+    </assembly>
+    <members>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.ActionSoftSystemMessageSendWebApiRequest.To">
+            <summary>
+            消息接收人账户，一个或多个合法的AWS登录账户（多个使用空格隔开）
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.ActionSoftSystemMessageSendWebApiRequest.Content">
+            <summary>
+            消息内容，最长2000字符，不支持HTML语法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.ActionSoftSystemMessageSendWebApiRequest.Level">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Bpm.Notifications.SystemMessageLevel"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.ActionSoftSystemMessageSendWebApiRequest.IsToMobile">
+            <summary>
+            是否向移动端设备发送
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.Dtos.ActionSoftSystemMessageSendInput.To">
+            <summary>
+            消息接收人账户，一个或多个合法的AWS登录账户s
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.Dtos.ActionSoftSystemMessageSendInput.Content">
+            <summary>
+            消息内容，最长2000字符，不支持HTML语法
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.Dtos.ActionSoftSystemMessageSendInput.Level">
+            <summary>
+            <see cref="T:Com.OPPO.Mo.Bpm.Notifications.SystemMessageLevel"/>
+            </summary>
+        </member>
+        <member name="P:Com.OPPO.Mo.Bpm.Notifications.Dtos.ActionSoftSystemMessageSendInput.IsToMobile">
+            <summary>
+            是否向移动端设备发送
+            </summary>
+        </member>
+    </members>
+</doc>

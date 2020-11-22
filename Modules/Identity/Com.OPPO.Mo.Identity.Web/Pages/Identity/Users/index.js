@@ -1,5 +1,5 @@
 ﻿(function ($) {
-
+    debugger;
     var l = abp.localization.getResource('MoIdentity');
 
     var _identityUserAppService = com.oPPO.mo.identity.identityUser;

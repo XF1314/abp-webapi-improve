@@ -1,11 +1,24 @@
-﻿using Com.OPPO.Mo.Blogging;
-using Com.OPPO.Mo.Identity;
+﻿using Com.OPPO.Mo.Bpm;
+using Com.OPPO.Mo.ExceptionlessExtensions;
+using Com.OPPO.Mo.FeatureManagement;
+using Com.OPPO.Mo.FeatureManagement.MongoDB;
+using Com.OPPO.Mo.Identity.MongoDB;
+using Com.OPPO.Mo.InternalGateway.Filters;
+using Com.OPPO.Mo.PermissionManagement;
+using Com.OPPO.Mo.PermissionManagement.Identity;
+using Com.OPPO.Mo.PermissionManagement.IdentityServer;
 using Com.OPPO.Mo.PermissionManagement.MongoDB;
+using Com.OPPO.Mo.SettingManagement.MongoDB;
+using Com.OPPO.Mo.Settings.Apollo;
+using Com.OPPO.Mo.Thirdparty;
+using Exceptionless;
+using Exceptionless.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using StackExchange.Redis;
@@ -17,34 +30,23 @@ using Volo.Abp;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.Autofac;
 using Volo.Abp.Data;
+using Volo.Abp.Http.Client.IdentityModel.Web;
 using Volo.Abp.Modularity;
 using Volo.Abp.MongoDB;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Security.Claims;
-using Com.OPPO.Mo.SettingManagement.MongoDB;
-using Com.OPPO.Mo.TenantManagement;
-using Com.OPPO.Mo.PermissionManagement.Identity;
-using Com.OPPO.Mo.PermissionManagement.IdentityServer;
-using Com.OPPO.Mo.PermissionManagement;
-using Volo.Abp.Http.Client.IdentityModel.Web;
-using Com.OPPO.Mo.TenantManagement.MongoDB;
-using Com.OPPO.Mo.FeatureManagement.MongoDB;
-using Com.OPPO.Mo.FeatureManagement;
-using Com.OPPO.Mo.Inmail;
-using Com.OPPO.Mo.Identity.MongoDB;
 
 namespace Com.OPPO.Mo.InternalGateway
 {
     [DependsOn(
+    typeof(MoSettinsApolloModule),
     typeof(AbpAutofacModule),
     typeof(AbpHttpClientIdentityModelWebModule),
-    typeof(MoIdentityHttpApiModule),
+    typeof(MoExceptionlessModule),
+    typeof(MoThirdpartyHttpApiModule),
+    typeof(MoBpmHttpApiModule),
     typeof(MoIdentityMongoDbModule),
-    //typeof(MoIdentityHttpApiClientModule),
-    typeof(MoBloggingHttpApiModule),
-    //typeof(MoBloggingHttpApiClientModule),
-    typeof(MoInmailHttpApiModule),
-    //typeof(MoInmailHttpApiClientModule),
+    //typeof(MoMasterDataHttpApiModule),
     typeof(MoPermissionManagementDomainIdentityModule),
     typeof(MoPermissionManagementDomainIdentityServerModule),
     typeof(MoPermissionManagementMongoDbModule),
@@ -54,72 +56,58 @@ namespace Com.OPPO.Mo.InternalGateway
     typeof(MoFeatureManagementApplicationModule),
     typeof(MoFeatureManagementHttpApiModule),
     typeof(MoSettingManagementMongoDbModule),
-    typeof(MoTenantManagementMongoDbModule),
-    typeof(MoTenantManagementApplicationModule),
-    typeof(MoTenantManagementHttpApiModule),
     typeof(AbpAspNetCoreMultiTenancyModule))]
     public class MoInternalGatewayHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            AbpCommonDbProperties.DbTablePrefix = MoConsts.ProjectCode;
+            AbpCommonDbProperties.DbTablePrefix = MoBpmConsts.ProjectCode;
             var configuration = context.Services.GetConfiguration();
-            Configure<AbpMultiTenancyOptions>(options =>
-            {
-                options.IsEnabled = MoConsts.IsMultiTenancyEnabled;
-            });
-            Configure<AbpMongoModelBuilderConfigurationOptions>(options =>
-            {
-                options.CollectionPrefix = MoConsts.ProjectCode;
-            });
+            ExceptionlessClient.Default.Configuration.Enabled = bool.Parse(configuration["oppo-mo-internal-gateway-log-exceptionless-enabled"]);
+            ExceptionlessClient.Default.Configuration.ServerUrl = configuration["oppo-mo-internal-gateway-log-exceptionless-server-host"];
+            ExceptionlessClient.Default.Configuration.ApiKey = configuration["oppo-mo-internal-gateway-log-exceptionless-api-key"];
+            ExceptionlessClient.Default.Configuration.SetDefaultMinLogLevel(minLogLevel: LogLevel.Warn);
+            if (!string.IsNullOrWhiteSpace(configuration["oppo-mo-internal-gateway-log-exceptionless-folder-storage"]))
+                ExceptionlessClient.Default.Configuration.UseFolderStorage(configuration["oppo-mo-internal-gateway-log-exceptionless-folder-storage"]);
 
-            context.Services.AddAuthentication("Bearer")
+            Configure<AbpMultiTenancyOptions>(options => options.IsEnabled = MoBpmConsts.IsMultiTenancyEnabled);
+            Configure<AbpMongoModelBuilderConfigurationOptions>(options => options.CollectionPrefix = MoBpmConsts.ProjectCode);
+            context.Services.AddAuthentication(configuration["oppo-mo-internal-gateway-auth-scheme"])
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = configuration["AuthServer:Authority"];
-                    options.ApiName = configuration["AuthServer:ApiName"];
+                    options.Authority = configuration["oppo-mo-internal-gateway-auth-host"];
+                    options.ApiName = configuration["oppo-mo-internal-gateway-app-id"];
                     options.RequireHttpsMetadata = false;
                 });
 
             context.Services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Mo Internal Gateway API", Version = "v1", Contact = new OpenApiContact { Name = "郑龙", Email = "1003885920@qq.com" } });
+                var scopes = JsonConvert.DeserializeObject<Dictionary<string, string>>(configuration["oppo-mo-internal-gateway-scopes"]);
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = $"{configuration["oppo-mo-internal-gateway-app-name"]} API",
+                    Version = "v1",
+                    Contact = new OpenApiContact { Name = "郑龙", Email = "1003885920@qq.com" }
+                });
+                options.DocumentFilter<SwaggerIgnoreFilter>();
+                options.DocumentFilter<SwaggerEnumDocumentFilter>();
                 options.DocInclusionPredicate((docName, description) => true);
+                options.IncludeXmlComments($"{ AppDomain.CurrentDomain.BaseDirectory}/Com.OPPO.Mo.Core.xml");
+                options.IncludeXmlComments($"{ AppDomain.CurrentDomain.BaseDirectory}/Com.OPPO.Mo.Thirdparty.HttpApi.xml");
+                options.IncludeXmlComments($"{AppDomain.CurrentDomain.BaseDirectory}/Com.OPPO.Mo.Thirdparty.Application.Contracts.xml");
+                //options.IncludeXmlComments($"{ AppDomain.CurrentDomain.BaseDirectory}/Com.OPPO.Mo.Masterdata.HttpApi.xml");
+                //options.IncludeXmlComments($"{AppDomain.CurrentDomain.BaseDirectory}/Com.OPPO.Mo.Masterdata.Application.Contracts.xml");
                 options.CustomSchemaIds(type => type.FullName);
-                //options.DocumentFilter<HiddenApiFilter>(); // 在接口类、方法标记属性 [HiddenApi]，可以阻止【Swagger文档】生成
-                //options.OperationFilter<AddHeaderOperationFilter>("correlationId", "Correlation Id for the request", false); // adds any string you like to the request headers - in this case, a correlation id
-                //options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
-                //options.OperationFilter<AddResponseHeadersFilter>();
-                //options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-                //{
-                //    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
-                //    In = ParameterLocation.Header,
-                //    Name = "Authorization",
-                //    Type = SecuritySchemeType.ApiKey
-                //});
-
-                // 接入identityserver4
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
                     Type = SecuritySchemeType.OAuth2,
                     Flows = new OpenApiOAuthFlows
                     {
-                        AuthorizationCode = new OpenApiOAuthFlow
+                        ClientCredentials = new OpenApiOAuthFlow
                         {
-                            AuthorizationUrl = new Uri($"{configuration["AuthServer:Authority"]}/connect/authorize", UriKind.Absolute),
-                            TokenUrl = new Uri($"{configuration["AuthServer:Authority"]}/connect/token"),
-                            // 这里配置是 scope 作用域，
-                            // 只需要填写 api资源 的id即可，
-                            // 不需要把 身份资源 的内容写上，比如openid 
-                            Scopes = new Dictionary<string, string> {
-                                { "MoInternalGateway","012"},
-                                { "MoIdentityService", "123" },
-                                { "MoWorkflowService", "234" },
-                                { "MoExternalService","345"},
-                                { "MoBloggingService","456" },
-                                { "MoInmailService" ,"567"},
-                                { "offline_access", "678" }
-                            }
+                            AuthorizationUrl = new Uri($"{configuration["oppo-mo-internal-gateway-auth-host"]}/connect/authorize", UriKind.Absolute),
+                            TokenUrl = new Uri($"{configuration["oppo-mo-internal-gateway-auth-host"]}/connect/token"),
+                            Scopes = scopes
                         }
                     }
                 });
@@ -130,20 +118,16 @@ namespace Com.OPPO.Mo.InternalGateway
                         {
                             Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
                         },
-                        new[] { "MoIdentityService", "MoWorkflowService", "MoExternalService" , "MoBloggingService", "MoInmailService", "offline_access" }
+                        scopes.Keys.ToArray()
                     }
                 });
             });
 
             context.Services.AddOcelot(context.Services.GetConfiguration());
-            context.Services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = configuration["Redis:Configuration"];
-            });
+            context.Services.AddStackExchangeRedisCache(options => options.Configuration = configuration["oppo-mo-internal-gateway-data-cache-redis-connection-string"]);
 
-            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
-            context.Services.AddDataProtection()
-                .PersistKeysToStackExchangeRedis(redis, "Mo-DataProtection-Keys-InternalGateway");
+            var redis = ConnectionMultiplexer.Connect(configuration["oppo-mo-internal-gateway-data-protection-redis-connection-string"]);
+            context.Services.AddDataProtection().PersistKeysToStackExchangeRedis(redis, "oppo-mo-data-protection-internal-gateway");
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -170,18 +154,17 @@ namespace Com.OPPO.Mo.InternalGateway
                 currentPrincipalAccessor.Principal.AddIdentity(new ClaimsIdentity(mapClaims.Select(p => new Claim(map[p.Type], p.Value, p.ValueType, p.Issuer))));
                 await next();
             });
-            if (MoConsts.IsMultiTenancyEnabled)
-            {
+            if (MoBpmConsts.IsMultiTenancyEnabled)
                 app.UseMultiTenancy();
-            }
+
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Mo Internal Gateway API");
-                options.OAuth2RedirectUrl($"{configuration["AppSelfUrl"]}/swagger/oauth2-redirect.html");
-                options.OAuthAppName(configuration["AppName"]);
-                options.OAuthClientId(configuration["IdentityClients:InternalGateway:ClientId"]);
-                options.OAuthClientSecret(configuration["IdentityClients:InternalGateway:ClientSecret"]);
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", configuration["oppo-mo-internal-gateway-app-name"]);
+                //options.OAuth2RedirectUrl($"{configuration["AppSelfUrl"]}/swagger/oauth2-redirect.html");
+                options.OAuthAppName(configuration["oppo-mo-internal-gateway-app-name"]);
+                options.OAuthClientId(configuration["oppo-mo-internal-gateway-client-id"]);
+                options.OAuthClientSecret(configuration["oppo-mo-internal-gateway-client-secret"]);
                 options.OAuthUsePkce();
             });
 
@@ -191,7 +174,6 @@ namespace Com.OPPO.Mo.InternalGateway
                        ctx.Request.Path.ToString().StartsWith("/api/abp/") ||
                        ctx.Request.Path.ToString().StartsWith("/api/mo/features") ||
                        ctx.Request.Path.ToString().StartsWith("/api/mo/permissions") ||
-                       ctx.Request.Path.ToString().StartsWith("/api/multi-tenancy/tenants")||
                        ctx.Request.Path.ToString().StartsWith("/api/internal-gateway/", StringComparison.OrdinalIgnoreCase),
                 app2 =>
                 {

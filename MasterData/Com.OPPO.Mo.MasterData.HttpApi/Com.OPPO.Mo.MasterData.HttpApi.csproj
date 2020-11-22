@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.OPPO.Mo.MasterData.Application.Contracts\Com.OPPO.Mo.MasterData.Application.Contracts.csproj" />
+  </ItemGroup>
+</Project>

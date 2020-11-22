@@ -15,7 +15,7 @@ namespace Com.OPPO.Mo.ConsoleClient
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                 .Enrich.FromLogContext()
-                .WriteTo.File("Logs/logs.txt")
+                .WriteTo.File("Logs/log.txt")
                 .CreateLogger();
 
             Log.Information("Starting ConsoleClientDemo...");

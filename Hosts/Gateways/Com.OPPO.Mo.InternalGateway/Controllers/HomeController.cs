@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Castle.Core.Logging;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace Com.OPPO.Mo.InternalGateway.Controllers
@@ -7,7 +9,7 @@ namespace Com.OPPO.Mo.InternalGateway.Controllers
     {
         public ActionResult Index()
         {
-            return Redirect("/swagger");
+             return Redirect("/swagger");
         }
     }
 }

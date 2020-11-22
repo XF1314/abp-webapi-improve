@@ -1,5 +1,4 @@
-﻿using Com.OPPO.Mo.Extensions;
-using Hangfire;
+﻿using Hangfire;
 using Hangfire.Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -7,15 +6,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Volo.Abp.BackgroundWorkers;
 using Volo.Abp.DependencyInjection;
-using System.Runtime;
 
 namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
 {
@@ -56,7 +52,7 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
                     hangfireBackgroundWorkderConfig.WorkerType = backgroundWorker.GetType();
                     var validateResult = ValidateBackgroundWorkerConfigs(hangfireBackgroundWorkderConfig);
                     if (!validateResult.IsOk())
-                        Logger.LogWarning(validateResult.Message);
+                        Logger.LogWarning(validateResult.Msg);
                     else
                     {
                         var hangfireBackgroundWorkerInfo = new HangfireBackgroundWorkerInfo
@@ -107,7 +103,7 @@ namespace Com.OPPO.Mo.BackgroundWorkers.Hangfire
                 {
                    var validateResult = ValidateBackgroundWorkerConfigs(x);
                     if (!validateResult.IsOk())
-                        Logger.LogWarning(validateResult.Message);
+                        Logger.LogWarning(validateResult.Msg);
                     else
                     {
                         if (!typeof(IHangfireBackgroundWorker).IsAssignableFrom(x.WorkerType))

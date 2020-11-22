@@ -26,6 +26,8 @@ namespace Com.OPPO.Mo.Schedule.BackgroundWorkers
 
         public async Task Execute(PerformContext performContext)
         {
+            var ss = _configuration["TestKey"];
+            Console.WriteLine(_configuration["TestKey"]);
             _logger.LogInformation(_configuration["TestKey"]);
             _logger.LogInformation(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
 

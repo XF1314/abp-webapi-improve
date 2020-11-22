@@ -3,80 +3,80 @@ using System.ComponentModel.DataAnnotations;
 namespace Com.OPPO.Mo
 {
     /// <summary>
-    ///½á¹û×´Ì¬Âë
+    ///ç»“æœçŠ¶æ€ç 
     /// </summary>
     public enum ResultCode
     {
         /// <summary>
-        /// ³É¹¦
+        /// æˆåŠŸ
         ///</summary>
-        [Display(Name = "³É¹¦", GroupName = Result.Successfull)]
-        Ok = MoConsts.BaseResultCode + 0,
+        [Display(Name = "æˆåŠŸ", GroupName = Result.Successfull)]
+        Ok = MoBpmConsts.BaseResultCode + 0,
 
         /// <summary>
-        /// Ê§°Ü
+        /// å¤±è´¥
         ///</summary>
-        [Display(Name = "Ê§°Ü")]
-        Fail = MoConsts.BaseResultCode + 1,
+        [Display(Name = "å¤±è´¥")]
+        Fail = MoBpmConsts.BaseResultCode + 1,
 
         /// <summary>
-        /// ·şÎñÆ÷Òì³£
+        /// æœåŠ¡å™¨å¼‚å¸¸
         ///</summary>
-        [Display(Name = "·şÎñÒì³£")]
-        ServerError = MoConsts.BaseResultCode + 10,
+        [Display(Name = "æœåŠ¡å¼‚å¸¸")]
+        ServerError = MoBpmConsts.BaseResultCode + 10,
 
         /// <summary>
-        /// Î´ÈÏÖ¤
+        /// æœªè®¤è¯
         ///</summary>
-        [Display(Name = "Î´ÈÏÖ¤")]
-        Unauthencatied = MoConsts.BaseResultCode + 20,
+        [Display(Name = "æœªè®¤è¯")]
+        Unauthenticatied = MoBpmConsts.BaseResultCode + 20,
 
         /// <summary>
-        /// Î´ÊÚÈ¨
+        /// æœªæˆæƒ
         ///</summary>
-        [Display(Name = "Î´ÊÚÈ¨")]
-        Unauthorized = MoConsts.BaseResultCode+30,
+        [Display(Name = "æœªæˆæƒ")]
+        Unauthorized = MoBpmConsts.BaseResultCode + 30,
 
         /// <summary>
-        /// ½ûÖ¹·ÃÎÊ
+        /// ç¦æ­¢è®¿é—®
         /// </summary>
-        [Display(Name = "½ûÖ¹·ÃÎÊ")]
-        Forbidden = MoConsts.BaseResultCode + 40,
+        [Display(Name = "ç¦æ­¢è®¿é—®")]
+        Forbidden = MoBpmConsts.BaseResultCode + 40,
 
         /// <summary>
-        /// Token ÑéÖ¤Ê§°Ü
+        /// Token éªŒè¯å¤±è´¥
         /// </summary>
-        [Display(Name = "ÎŞĞ§Token")]
-        InvalidToken = MoConsts.BaseResultCode + 50,
+        [Display(Name = "æ— æ•ˆToken")]
+        InvalidToken = MoBpmConsts.BaseResultCode + 50,
 
         /// <summary>
-        /// Ç©ÃûÑéÖ¤Ê§°Ü
+        /// ç­¾åéªŒè¯å¤±è´¥
         /// </summary>
-        [Display(Name = "Ç©ÃûÑéÖ¤Ê§°Ü")]
-        InvalidSign = MoConsts.BaseResultCode + 100,
+        [Display(Name = "ç­¾åéªŒè¯å¤±è´¥")]
+        InvalidSign = MoBpmConsts.BaseResultCode + 100,
 
         /// <summary>
-        /// ²ÎÊıÑéÖ¤Ê§°Ü
+        /// å‚æ•°éªŒè¯å¤±è´¥
         /// </summary>
-        [Display(Name = "²ÎÊıÑéÖ¤Ê§°Ü")]
-        InvalidParams = MoConsts.BaseResultCode + 200,
+        [Display(Name = "å‚æ•°éªŒè¯å¤±è´¥")]
+        InvalidParams = MoBpmConsts.BaseResultCode + 200,
 
         /// <summary>
-        /// Ã»ÓĞÊı¾İ
+        /// æ²¡æœ‰æ•°æ®
         ///</summary>
-        [Display(Name = "Ã»ÓĞÊı¾İ")]
-        NoData = MoConsts.BaseResultCode + 404,
+        [Display(Name = "æ²¡æœ‰æ•°æ®")]
+        NoData = MoBpmConsts.BaseResultCode + 404,
 
         /// <summary>
-        /// Êı¾İÖØ¸´
+        /// æ•°æ®é‡å¤
         /// </summary>
-        [Display(Name = "Êı¾İÖØ¸´")]
-        DuplicateData = MoConsts.BaseResultCode + 405,
+        [Display(Name = "æ•°æ®é‡å¤")]
+        DuplicateData = MoBpmConsts.BaseResultCode + 405,
 
         /// <summary>
-        /// ¹Ø¼üÊı¾İÈ±Ê§
+        /// å…³é”®æ•°æ®ç¼ºå¤±
         /// </summary>
-        [Display(Name = "¹Ø¼üÊı¾İÈ±Ê§")]
-        MissEssentialData = MoConsts.BaseResultCode + 406,
+        [Display(Name = "å…³é”®æ•°æ®ç¼ºå¤±")]
+        MissEssentialData = MoBpmConsts.BaseResultCode + 406,
     }
 }

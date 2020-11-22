@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace></RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Com.OPPO.Mo.IdentityServer.Application.Contracts\Com.OPPO.Mo.IdentityServer.Application.Contracts.csproj" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Com\OPPO\Mo\IdentityServer\" />
+	</ItemGroup>
+</Project>

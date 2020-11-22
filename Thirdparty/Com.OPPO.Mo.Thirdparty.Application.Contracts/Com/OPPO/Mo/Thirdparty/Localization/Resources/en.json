@@ -1,0 +1,11 @@
+{
+  "culture": "en",
+  "texts": {
+    "DisplayName:EsbHost": "Esb host",
+    "DisplayName:EsbAppId": "Esb app identifier",
+    "DisplayName:EsbSignKey": "Esb sign key",
+    "Description:EsbHost": "Esb host.",
+    "Description:EsbAppId": "Esb app identifier.",
+    "Description:EsbSignKey": "Esb sign key."
+  }
+}

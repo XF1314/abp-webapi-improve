@@ -23,16 +23,16 @@ namespace Com.OPPO.Mo.Settings.Apollo
             Configuration = configuration;
         }
 
-        public virtual Task<string> GetOrNullAsync(SettingDefinition setting)
+        public virtual async Task<string> GetOrNullAsync(SettingDefinition setting)
         {
             var keys = setting.Name.Split(ConfigurationPath.KeyDelimiter, StringSplitOptions.RemoveEmptyEntries);
             if (keys.Length > 0)
             {
                 var @namespace = keys[0];
-                if (ApolloConfigurationManager.Manager.Registry.GetFactory(@namespace) != null)
-                {
-                    return Task.FromResult(Configuration[setting.Name]);
-                }
+                //if (ApolloConfigurationManager.Manager.Registry.GetFactory(@namespace) != null)
+                //{
+                    return Configuration[setting.Name];
+                //}
             }
 
             return null;          
